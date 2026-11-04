@@ -1,233 +1,319 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sartore | Governança Corporativa & Compliance Ocupacional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-deep: #070B12;
-            --bg-card: #0F172A;
-            --gold: #D4AF37;
-            --gold-light: #F3E5AB;
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --border-color: rgba(212, 175, 55, 0.2);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sartore | Saúde Mental e Governança Corporativa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-canvas: #F7F6F0;
+      --card-bg: #FFFFFF;
+      --border-color: #E5E3D9;
+      --text-main: #1A1D20;
+      --text-muted: #5C636B;
+      --accent-taupe: #9E8E78;
+      --accent-dark: #2C3034;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    header {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(7, 11, 18, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 5%;
-        }
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-        }
+    .brand-logo-svg {
+      width: 42px;
+      height: 42px;
+    }
 
-        .brand-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: var(--text-main);
-        }
+    .brand-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-main);
+      line-height: 1;
+    }
 
-        .brand-tagline {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--gold);
-        }
+    .brand-text p {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
 
-        .nav-links a:hover {
-            color: var(--gold-light);
-        }
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
 
-        .btn-cta {
-            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
-            color: #070B12;
-            padding: 0.7rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: opacity 0.3s ease;
-        }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
 
-        .btn-cta:hover {
-            opacity: 0.9;
-        }
+    .hero-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 80px 40px;
+      text-align: center;
+      margin-bottom: 40px;
+      border-radius: 4px;
+    }
 
-        main {
-            padding-top: 120px;
-        }
+    .hero-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
 
-        .hero {
-            padding: 6rem 5% 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
+    .hero-section p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 30px auto;
+    }
 
-        .hero h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-        }
+    .btn-primary {
+      background-color: var(--accent-dark);
+      color: #FFFFFF;
+      padding: 14px 32px;
+      border: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
 
-        .hero h2 span {
-            color: var(--gold);
-            font-style: italic;
-        }
+    .btn-primary:hover {
+      background-color: var(--accent-taupe);
+    }
 
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin-bottom: 2rem;
-        }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+      text-align: center;
+    }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 5%;
-        }
+    .simulator-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      border-radius: 4px;
+      margin-bottom: 60px;
+    }
 
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 6px;
-            transition: transform 0.3s ease;
-        }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
+    .portfolio-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      border-radius: 4px;
+    }
 
-        .feature-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--gold-light);
-        }
+    .portfolio-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
 
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
+    .portfolio-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
 
-        footer {
-            margin-top: 6rem;
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 5%;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
+    .bio-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 60px 40px;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 40px;
+      align-items: center;
+      border-radius: 4px;
+      margin-bottom: 60px;
+    }
 
-        footer p + p {
-            margin-top: 0.5rem;
-        }
-    </style>
+    .bio-image img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 2px;
+      filter: grayscale(15%);
+    }
+
+    .bio-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+
+    .bio-content h4 {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-taupe);
+      margin-bottom: 20px;
+    }
+
+    .bio-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: var(--card-bg);
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      padding: 30px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media(max-width: 768px) {
+      .bio-section {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 20px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <h1 class="brand-name">SARTORE</h1>
-            <span class="brand-tagline">Governança & Compliance Ocupacional</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#metodologia">Metodologia ETO™</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="https://wa.me/5521995124377" class="btn-cta" target="_blank">Contato Executivo</a></li>
-        </ul>
-    </header>
+  <header>
+    <div class="brand-container">
+      <svg class="brand-logo-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="75" r="48" stroke="#1A1D20" stroke-width="4.5" opacity="0.9"/>
+        <circle cx="75" cy="120" r="48" stroke="#1A1D20" stroke-width="4.5" opacity="0.8"/>
+        <circle cx="125" cy="120" r="48" stroke="#1A1D20" stroke-width="4.5" opacity="0.85"/>
+      </svg>
+      <div class="brand-text">
+        <h1>Sartore</h1>
+        <p>Saúde Mental & Governança</p>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#sobre">Especialidade</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#diretoria">Diretoria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </header>
 
-    <main>
-        <section class="hero">
-            <div>
-                <h2>Inteligência Clínica, Compliance Ocupacional e <span>Gestão Estratégica de Riscos</span> (NR-1/PGR).</h2>
-                <p>Consultoria *boutique* de alta performance voltada para Conselhos de Administração, C-Level e Diretorias Executivas, integrando governança e a sustentabilidade humana nas organizações.</p>
-                <a href="https://wa.me/5521995124377" class="btn-cta" target="_blank">Agendar Diagnóstico Executivo</a>
-            </div>
-        </section>
+  <main>
+    <section class="hero-section">
+      <h2>Precisão Estrutural e Governança Executiva</h2>
+      <p>Com mais de 26 anos de experiência na estruturação de governança para empresas e grandes grupos nacionais, já tendo atendido clientes como Rede Globo, Alstom, Sulamérica Saúde, ALLOS, entre outros.</p>
+      <button class="btn-primary" onclick="alert('Redirecionando para agendamento técnico.')">Agendar Reunião de Diagnóstico</button>
+    </section>
 
-        <section class="features-grid">
-            <div class="feature-card">
-                <h3>Compliance NR-1 / PGR</h3>
-                <p>Mitigação avançada de passivos trabalhistas e riscos psicossociais com rigor técnico e conformidade regulatória estrita.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Metodologia ETO™</h3>
-                <p>Abordagem proprietária que traduz décadas de pesquisa acadêmica e inteligência clínica em protocolos corporativos seguros.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Governança C-Level</h3>
-                <p>Alinhamento estratégico para conselhos e lideranças na preservação do capital humano e continuidade operacional.</p>
-            </div>
-        </section>
-    </main>
+    <h2 class="section-title">Portfólio de Soluções Integradas</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <h3>1. Compliance, Audit & Governança</h3>
+        <p>Inventário PGR/NR-1 (Metodologia ETO™), consultoria de riscos psicossociais e certificações em conformidade com a Lei 14.831/24.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>2. Liderança, Cultura & Performance</h3>
+        <p>Capacitação executiva para mitigação precoce de esgotamento, Burnout e implementação de redes de segurança psicológica.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>3. Gestão Emocional de C-Level</h3>
+        <p>Programa individualizado para Conselheiros e Diretores focado em sustentabilidade decisória sob alta pressão corporativa.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>4. Supervisão & Suporte para Gestão de Pessoas</h3>
+        <p>Retaguarda técnica especializada para sustentar a atuação estratégica na gestão de casos complexos com segurança jurídica.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>5. Escuta, Crises & Arquitetura</h3>
+        <p>Dispositivo de acolhimento focal, apuração independente de assédio (Lei 14.457/22) e reestruturação pós-crise.</p>
+      </div>
+    </div>
 
-    <footer class="site-footer">
-        <p>&copy; 2026 Sartore Consultoria. Todos os direitos reservados.</p>
-        <p>Atendimento Executivo: +55 (21) 99512-4377 | E-mail: contato@sartoreconsultoria.com.br</p>
-        <p>Rio de Janeiro - RJ (Atendimento Nacional)</p>
-    </footer>
+    <section class="bio-section" id="diretoria">
+      <div class="bio-image">
+        <img src="1000537698_2.jpg" alt="Alan Braga de Paula">
+      </div>
+      <div class="bio-content">
+        <h3>Alan Braga de Paula</h3>
+        <h4>Diretor Técnico & Fundador</h4>
+        <p>Mais de 26 anos atuando como Consultor em Saúde Mental e Gestão de Pessoas em empresas nacionais e multinacionais, Doutorando em Ciências Médicas (FM-USP), Mestre em Psicologia Social (PUC-SP), Especialista em Saúde Mental (FM-USP), Psicanalista, Psicólogo Clínico e Social com ampla experiência clínica e institucional em consultoria, clínicas institucionais, hospitais e serviços de saúde mental.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <p>&copy; 2026 Sartore: Saúde Mental & Governança Corporativa. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
