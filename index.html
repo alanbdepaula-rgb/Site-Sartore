@@ -1,319 +1,768 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sartore | Saúde Mental e Governança Corporativa</title>
+  <title>SARTORE | Saúde Mental & Governança Corporativa</title>
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Architectural Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            canvas: '#F7F6F0',
+            panel: '#F1EFE6',
+            cardBg: '#FFFFFF',
+            ink: '#1A1D20',
+            inkMuted: '#5A5E66',
+            taupe: '#9E8E78',
+            taupeDark: '#756854',
+            taupeLight: '#E8E3D8',
+            borderSoft: '#E5E3D9',
+            borderDark: 'rgba(28, 30, 33, 0.15)',
+            obsidian: '#181A1D',
+            alertBg: '#FAF2EE',
+            alertBorder: '#E5C0B3',
+            alertText: '#8D361F'
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    :root {
-      --bg-canvas: #F7F6F0;
-      --card-bg: #FFFFFF;
-      --border-color: #E5E3D9;
-      --text-main: #1A1D20;
-      --text-muted: #5C636B;
-      --accent-taupe: #9E8E78;
-      --accent-dark: #2C3034;
+    body {
+      background-color: #F7F6F0;
+      color: #1A1D20;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .bg-editorial-grid {
+      background-color: #F7F6F0;
+      background-image: radial-gradient(rgba(158, 142, 120, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .border-architectural {
+      border-color: #E5E3D9;
+    }
+
+    ::selection {
+      background-color: #9E8E78;
+      color: #FFFFFF;
+    }
+
+    .modal-backdrop {
+      backdrop-filter: blur(12px);
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .card-transition {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     }
 
-    body {
-      background-color: var(--bg-canvas);
-      color: var(--text-main);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    header {
-      background-color: var(--card-bg);
-      border-bottom: 1px solid var(--border-color);
-      padding: 24px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .brand-container {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .brand-logo-svg {
-      width: 42px;
-      height: 42px;
-    }
-
-    .brand-text h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      letter-spacing: 0.15em;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--text-main);
-      line-height: 1;
-    }
-
-    .brand-text p {
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--text-main);
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 24px;
-    }
-
-    .hero-section {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 80px 40px;
-      text-align: center;
-      margin-bottom: 40px;
-      border-radius: 4px;
-    }
-
-    .hero-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 500;
-      color: var(--text-main);
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-
-    .hero-section p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 750px;
-      margin: 0 auto 30px auto;
-    }
-
-    .btn-primary {
-      background-color: var(--accent-dark);
-      color: #FFFFFF;
-      padding: 14px 32px;
-      border: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      border-radius: 2px;
-      transition: background 0.3s;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--accent-taupe);
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 500;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .simulator-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 40px;
-      border-radius: 4px;
-      margin-bottom: 60px;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-bottom: 60px;
-    }
-
-    .portfolio-item {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 32px;
-      border-radius: 4px;
-    }
-
-    .portfolio-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-
-    .portfolio-item p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .bio-section {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 60px 40px;
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 40px;
-      align-items: center;
-      border-radius: 4px;
-      margin-bottom: 60px;
-    }
-
-    .bio-image img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      border-radius: 2px;
-      filter: grayscale(15%);
-    }
-
-    .bio-content h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      margin-bottom: 8px;
-    }
-
-    .bio-content h4 {
-      font-size: 0.85rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent-taupe);
-      margin-bottom: 20px;
-    }
-
-    .bio-content p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 15px;
-    }
-
-    footer {
-      background: var(--card-bg);
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-      padding: 30px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    @media(max-width: 768px) {
-      .bio-section {
-        grid-template-columns: 1fr;
-      }
-      header {
-        padding: 20px;
-      }
-      .nav-links {
-        display: none;
-      }
+    .card-transition:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(28, 30, 33, 0.05);
+      border-color: #9E8E78;
     }
   </style>
 </head>
-<body>
+<body class="bg-editorial-grid text-ink flex flex-col min-h-screen">
 
-  <header>
-    <div class="brand-container">
-      <svg class="brand-logo-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="75" r="48" stroke="#1A1D20" stroke-width="4.5" opacity="0.9"/>
-        <circle cx="75" cy="120" r="48" stroke="#1A1D20" stroke-width="4.5" opacity="0.8"/>
-        <circle cx="125" cy="120" r="48" stroke="#1A1D20" stroke-width="4.5" opacity="0.85"/>
-      </svg>
-      <div class="brand-text">
-        <h1>Sartore</h1>
-        <p>Saúde Mental & Governança</p>
+  <!-- ========================================== -->
+  <!-- 1. HEADER INSTITUCIONAL                   -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-[#F7F6F0]/90 backdrop-blur-md border-b border-architectural transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+      
+      <!-- Logo Sartore: SVG dos 3 Aros (Nó Borromeano) + Tipografia Editorial -->
+      <a href="#" class="flex items-center space-x-4 group">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+          <svg viewBox="0 0 100 100" class="w-full h-full text-ink fill-none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="50" cy="38" r="23" stroke="currentColor"/>
+            <circle cx="36" cy="62" r="23" stroke="currentColor"/>
+            <circle cx="64" cy="62" r="23" stroke="currentColor"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif font-semibold text-2xl sm:text-3xl tracking-[0.18em] uppercase text-ink leading-none">
+            Sartore
+          </span>
+          <span class="text-[9px] font-sans font-medium tracking-[0.28em] uppercase text-taupeDark mt-1">
+            Saúde Mental & Governança
+          </span>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação Desktop -->
+      <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-[0.2em] text-inkMuted">
+        <a href="#essencia" class="hover:text-ink transition-colors duration-200">A Essência</a>
+        <a href="#metodologia" class="hover:text-ink transition-colors duration-200">Metodologia</a>
+        <a href="#portfolio" class="hover:text-ink transition-colors duration-200">Portfólio</a>
+        <a href="#simulador" class="hover:text-ink transition-colors duration-200">Simulador NR-1</a>
+        <a href="#lideranca" class="hover:text-ink transition-colors duration-200">Direção Técnica</a>
+      </nav>
+
+      <!-- Botão CTA Principal Header -->
+      <div class="flex items-center space-x-4">
+        <button onclick="openBookingModal()" class="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-full border border-ink text-xs font-semibold uppercase tracking-[0.16em] text-ink hover:bg-ink hover:text-canvas transition-all duration-300 shadow-xs">
+          Agendar Diagnóstico
+        </button>
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 text-ink rounded-lg border border-architectural" aria-label="Abrir Menu">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
+
     </div>
-    <ul class="nav-links">
-      <li><a href="#sobre">Especialidade</a></li>
-      <li><a href="#portfolio">Portfólio</a></li>
-      <li><a href="#diretoria">Diretoria</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-panel border-b border-architectural px-6 py-6 space-y-4">
+      <a href="#essencia" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-ink">A Essência</a>
+      <a href="#metodologia" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-ink">Metodologia ETO™</a>
+      <a href="#portfolio" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-ink">Portfólio de Serviços</a>
+      <a href="#simulador" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-ink">Simulador de Risco NR-1</a>
+      <a href="#lideranca" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-ink">Direção Técnica</a>
+      <button onclick="toggleMobileNav(); openBookingModal();" class="w-full mt-4 py-3 bg-ink text-canvas rounded-full text-xs uppercase font-semibold tracking-widest">
+        Agendar Reunião Técnica
+      </button>
+    </div>
   </header>
 
-  <main>
-    <section class="hero-section">
-      <h2>Precisão Estrutural e Governança Executiva</h2>
-      <p>Com mais de 26 anos de experiência na estruturação de governança para empresas e grandes grupos nacionais, já tendo atendido clientes como Rede Globo, Alstom, Sulamérica Saúde, ALLOS, entre outros.</p>
-      <button class="btn-primary" onclick="alert('Redirecionando para agendamento técnico.')">Agendar Reunião de Diagnóstico</button>
-    </section>
+  <!-- ========================================== -->
+  <!-- 2. HERO SECTION                            -->
+  <!-- ========================================== -->
+  <section class="relative py-20 sm:py-28 border-b border-architectural overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl space-y-8">
+        
+        <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-cardBg border border-architectural shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-taupe"></span>
+          <span class="text-[11px] font-mono uppercase tracking-[0.22em] text-taupeDark font-semibold">
+            Engenharia de Governança &bull; Presença Nacional
+          </span>
+        </div>
 
-    <h2 class="section-title">Portfólio de Soluções Integradas</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <h3>1. Compliance, Audit & Governança</h3>
-        <p>Inventário PGR/NR-1 (Metodologia ETO™), consultoria de riscos psicossociais e certificações em conformidade com a Lei 14.831/24.</p>
+        <h1 class="font-serif font-normal text-4xl sm:text-5xl md:text-6xl text-ink leading-[1.1] tracking-tight">
+          Inteligência Clínica, Compliance Ocupacional e Gestão Estratégica de Riscos Psicossociais
+          <span class="italic font-light text-taupeDark block mt-3 text-3xl sm:text-4xl md:text-5xl">
+            (NR-1 / PGR & Governança ESG)
+          </span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-inkMuted font-light leading-relaxed max-w-2xl">
+          Arquitetura de soluções corporativas desenhadas com exatidão cirúrgica (ajuste fino institucional) para responder às exigências de Conselhos de Administração, Diretorias Executivas e Comitês de Auditoria.
+        </p>
+
+        <div class="pt-2 flex flex-wrap gap-2.5 sm:gap-3">
+          <span class="px-3.5 py-2 bg-cardBg border border-architectural text-[10px] font-mono uppercase tracking-widest text-ink font-semibold rounded-md shadow-xs">
+            COMPLIANCE NR-1 / PGR
+          </span>
+          <span class="px-3.5 py-2 bg-cardBg border border-architectural text-[10px] font-mono uppercase tracking-widest text-ink font-semibold rounded-md shadow-xs">
+            AUDITORIA ESG SOCIAL
+          </span>
+          <span class="px-3.5 py-2 bg-cardBg border border-architectural text-[10px] font-mono uppercase tracking-widest text-ink font-semibold rounded-md shadow-xs">
+            SELO LEI 14.831/24
+          </span>
+          <span class="px-3.5 py-2 bg-cardBg border border-architectural text-[10px] font-mono uppercase tracking-widest text-ink font-semibold rounded-md shadow-xs">
+            GESTÃO C-LEVEL
+          </span>
+        </div>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+          <button onclick="openBookingModal()" class="px-8 py-4 rounded-full bg-ink text-canvas font-semibold text-xs uppercase tracking-[0.18em] hover:bg-taupeDark transition-all duration-300 shadow-sm text-center">
+            Agendar Reunião Técnica de Diagnóstico
+          </button>
+          <a href="#simulador" class="px-8 py-4 rounded-full bg-cardBg border border-architectural text-ink font-semibold text-xs uppercase tracking-[0.18em] hover:border-ink transition-all duration-300 text-center">
+            Simular Maturidade NR-1
+          </a>
+        </div>
       </div>
-      <div class="portfolio-item">
-        <h3>2. Liderança, Cultura & Performance</h3>
-        <p>Capacitação executiva para mitigação precoce de esgotamento, Burnout e implementação de redes de segurança psicológica.</p>
+
+      <!-- Card de Prova Institucional (Com o texto exato solicitado) -->
+      <div class="mt-16 p-8 rounded-3xl bg-cardBg border border-architectural flex flex-col md:flex-row items-center justify-between gap-8 shadow-xs">
+        <div class="flex items-center space-x-5">
+          <div class="w-14 h-14 rounded-2xl bg-panel border border-architectural flex items-center justify-center font-serif text-2xl text-taupeDark font-bold flex-shrink-0">
+            26+
+          </div>
+          <div>
+            <h4 class="font-serif font-semibold text-xl text-ink">Mais de 26 Anos de Autoridade Técnica</h4>
+            <p class="text-xs text-inkMuted font-light leading-relaxed mt-1">
+              Com mais de 26 anos de experiência na estruturação de governança para empresas e grandes grupos nacionais, já tendo atendido clientes como Rede Globo, Alstom, Sulamérica Saúde, ALLOS, entre outros.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-8 text-xs text-taupeDark font-mono uppercase tracking-wider border-t md:border-t-0 md:border-l border-architectural pt-4 md:pt-0 md:pl-8">
+          <div>
+            <span class="block text-ink font-bold text-sm">100%</span>
+            <span>Rigor Auditável</span>
+          </div>
+          <div>
+            <span class="block text-ink font-bold text-sm">Presencial & Remoto</span>
+            <span>Atendimento Nacional</span>
+          </div>
+        </div>
       </div>
-      <div class="portfolio-item">
-        <h3>3. Gestão Emocional de C-Level</h3>
-        <p>Programa individualizado para Conselheiros e Diretores focado em sustentabilidade decisória sob alta pressão corporativa.</p>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. A ESSÊNCIA SARTORE                      -->
+  <!-- ========================================== -->
+  <section id="essencia" class="py-20 sm:py-28 border-b border-architectural bg-panel/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-mono uppercase tracking-[0.28em] text-taupeDark font-semibold block">
+            A Filosofia da Precisão Estrutural
+          </span>
+          <h2 class="font-serif font-normal text-3xl sm:text-4xl text-ink leading-tight">
+            Nenhum modelo de prateleira responde à singularidade de um Conselho.
+          </h2>
+          <div class="w-16 h-[1px] bg-taupe"></div>
+          <p class="text-sm text-inkMuted font-light leading-relaxed">
+            A <strong class="text-ink">SARTORE</strong> orienta-se pela métrica da <em>engenharia de governança sob medida</em>. Afastamos propositadamente qualquer abordagem genérica para nos dedicarmos à mensuração exata da estrutura psíquica e jurídica das organizações.
+          </p>
+          <p class="text-sm text-inkMuted font-light leading-relaxed">
+            Nosso trabalho consiste em identificar o contorno exato da cultura empresarial, diagnosticar pontos de atrito ou vácuos de compliance (NR-1, assédio, exaustão) e promover um ajuste fino na governança para proteger o patrimônio humano e decisório da empresa.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="p-8 rounded-3xl bg-cardBg border border-architectural space-y-3 shadow-xs card-transition">
+            <span class="text-xs font-mono text-taupeDark font-semibold tracking-widest uppercase">01 / Diagnóstico Singular</span>
+            <h3 class="font-serif font-bold text-2xl text-ink">Leitura Fina da Anatomia Organizacional</h3>
+            <p class="text-xs text-inkMuted font-light leading-relaxed">
+              Mapeamos onde os atritos latentes corroem a produtividade e aumentam a sinistralidade. Cada empresa possui uma dinâmica própria que exige parâmetros específicos de intervenção.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-cardBg border border-architectural space-y-3 shadow-xs card-transition">
+            <span class="text-xs font-mono text-taupeDark font-semibold tracking-widest uppercase">02 / Eliminação de Excesso de Risco</span>
+            <h3 class="font-serif font-bold text-2xl text-ink">Mitigação Cirúrgica de Passivos</h3>
+            <p class="text-xs text-inkMuted font-light leading-relaxed">
+              Eliminamos a exposição jurídica proveniente da falta de cumprimento dos inventários psicossociais da NR-1, prevenindo contingências fiscais e processos trabalhistas de alta severidade.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-cardBg border border-architectural space-y-3 shadow-xs card-transition">
+            <span class="text-xs font-mono text-taupeDark font-semibold tracking-widest uppercase">03 / Acabamento Institucional</span>
+            <h3 class="font-serif font-bold text-2xl text-ink">Blindagem de Governança & C-Level</h3>
+            <p class="text-xs text-inkMuted font-light leading-relaxed">
+              Entregamos relatórios auditáveis com rigor epidemiológico, conferindo tranquilidade aos Conselhos de Administração, comitês de auditoria e comitês de ESG.
+            </p>
+          </div>
+        </div>
+
       </div>
-      <div class="portfolio-item">
-        <h3>4. Supervisão & Suporte para Gestão de Pessoas</h3>
-        <p>Retaguarda técnica especializada para sustentar a atuação estratégica na gestão de casos complexos com segurança jurídica.</p>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. METODOLOGIA ETO™                        -->
+  <!-- ========================================== -->
+  <section id="metodologia" class="py-20 sm:py-28 border-b border-architectural">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-mono uppercase tracking-[0.28em] text-taupeDark font-semibold">
+          Núcleo Metodológico de Rigor Técnico
+        </span>
+        <h2 class="font-serif font-normal text-3xl sm:text-5xl text-ink">
+          A Metodologia ETO™
+        </h2>
+        <p class="text-sm text-inkMuted font-light leading-relaxed">
+          Articulamos a teoria psicanalítica dos três registros (Real, Simbólico e Imaginário) com os requisitos objetivos da governança corporativa contemporânea.
+        </p>
       </div>
-      <div class="portfolio-item">
-        <h3>5. Escuta, Crises & Arquitetura</h3>
-        <p>Dispositivo de acolhimento focal, apuração independente de assédio (Lei 14.457/22) e reestruturação pós-crise.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-3xl bg-cardBg border border-architectural space-y-5 relative shadow-xs card-transition">
+          <div class="w-12 h-12 rounded-2xl bg-panel border border-architectural flex items-center justify-center font-serif text-xl font-bold text-ink">E</div>
+          <div>
+            <span class="text-xs font-mono font-semibold text-taupeDark uppercase tracking-widest block mb-1">Fase 01 &bull; Clínica</span>
+            <h3 class="font-serif font-bold text-2xl text-ink">Escuta Estruturada</h3>
+          </div>
+          <p class="text-xs text-inkMuted font-light leading-relaxed">
+            Investigação qualitativa e quantitativa da cultura interna. Identificação de focos silenciosos de adoecimento psíquico, exaustão, assédio e atritos de liderança.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-cardBg border border-architectural space-y-5 relative shadow-xs card-transition">
+          <div class="w-12 h-12 rounded-2xl bg-panel border border-architectural flex items-center justify-center font-serif text-xl font-bold text-ink">T</div>
+          <div>
+            <span class="text-xs font-mono font-semibold text-taupeDark uppercase tracking-widest block mb-1">Fase 02 &bull; Análise</span>
+            <h3 class="font-serif font-bold text-2xl text-ink">Topologia de Riscos</h3>
+          </div>
+          <p class="text-xs text-inkMuted font-light leading-relaxed">
+            Cruzamento do diagnóstico humano com o mapa de riscos da NR-1 / PGR e exigências legais (Lei 14.831/24 e 14.457/22). Definição exata dos pontos de vulnerabilidade.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-cardBg border border-architectural space-y-5 relative shadow-xs card-transition">
+          <div class="w-12 h-12 rounded-2xl bg-panel border border-architectural flex items-center justify-center font-serif text-xl font-bold text-ink">O</div>
+          <div>
+            <span class="text-xs font-mono font-semibold text-taupeDark uppercase tracking-widest block mb-1">Fase 03 &bull; Governança</span>
+            <h3 class="font-serif font-bold text-2xl text-ink">Operacionalização</h3>
+          </div>
+          <p class="text-xs text-inkMuted font-light leading-relaxed">
+            Implementação de relatórios auditáveis anonimizados, capacitação de lideranças, retaguarda para BPs e suporte direto ao C-Level para sustentação decisória.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. PORTFÓLIO INTEGRADO (5 NÚCLEOS)        -->
+  <!-- ========================================== -->
+  <section id="portfolio" class="py-20 sm:py-28 border-b border-architectural bg-panel/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-mono uppercase tracking-[0.28em] text-taupeDark font-semibold">
+          Arquitetura de Soluções Corporativas
+        </span>
+        <h2 class="font-serif font-normal text-3xl sm:text-5xl text-ink">
+          Portfólio Completo de Serviços
+        </h2>
+        <p class="text-sm text-inkMuted font-light leading-relaxed">
+          Nossas soluções estão divididas em 5 núcleos estratégicos de atuação, cobrindo desde a exigência legal até a alta gestão emocional executiva.
+        </p>
+      </div>
+
+      <div class="bg-cardBg rounded-3xl border border-architectural overflow-hidden shadow-xs">
+        <div class="flex flex-wrap border-b border-architectural bg-canvas overflow-x-auto">
+          <button onclick="switchPillarTab(1)" id="tab-btn-1" class="px-6 py-4 text-xs font-mono font-semibold uppercase tracking-wider text-ink border-b-2 border-ink transition-all whitespace-nowrap">
+            1. Compliance & Governança
+          </button>
+          <button onclick="switchPillarTab(2)" id="tab-btn-2" class="px-6 py-4 text-xs font-mono font-semibold uppercase tracking-wider text-inkMuted hover:text-ink transition-all whitespace-nowrap">
+            2. Liderança & Performance
+          </button>
+          <button onclick="switchPillarTab(3)" id="tab-btn-3" class="px-6 py-4 text-xs font-mono font-semibold uppercase tracking-wider text-inkMuted hover:text-ink transition-all whitespace-nowrap">
+            3. Gestão C-Level
+          </button>
+          <button onclick="switchPillarTab(4)" id="tab-btn-4" class="px-6 py-4 text-xs font-mono font-semibold uppercase tracking-wider text-inkMuted hover:text-ink transition-all whitespace-nowrap">
+            4. Suporte Gestão de Pessoas
+          </button>
+          <button onclick="switchPillarTab(5)" id="tab-btn-5" class="px-6 py-4 text-xs font-mono font-semibold uppercase tracking-wider text-inkMuted hover:text-ink transition-all whitespace-nowrap">
+            5. Escuta, Crises & Arquitetura
+          </button>
+        </div>
+
+        <div class="p-8 sm:p-12 space-y-8">
+          <!-- PILLAR 1 -->
+          <div id="pillar-content-1" class="pillar-pane space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-architectural pb-6">
+              <div>
+                <span class="text-xs font-mono text-taupeDark font-bold uppercase">Núcleo 01</span>
+                <h3 class="font-serif font-bold text-2xl text-ink">COMPLIANCE, AUDIT & GOVERNANÇA PSICOSSOCIAL</h3>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="space-y-3">
+                <h4 class="font-serif font-semibold text-lg text-ink">Serviços e Entregáveis</h4>
+                <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
+                  <li>Inventário PGR/NR-1 (Metodologia ETO™)</li>
+                  <li>Consultoria de Riscos Psicossociais</li>
+                  <li>Certificação Lei 14.831/24 (Selo Empresa Promotora)</li>
+                  <li>Auditoria ESG (Pilar Social para Conselhos)</li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6 bg-panel rounded-2xl border border-architectural">
+                <h4 class="font-serif font-semibold text-base text-ink">Escopo</h4>
+                <p class="text-xs text-inkMuted font-light leading-relaxed">Adequação normativa integral, mitigação de atritos trabalhistas, redução de absenteísmo e auditoria para Conselhos.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 2 -->
+          <div id="pillar-content-2" class="pillar-pane hidden space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-architectural pb-6">
+              <div>
+                <span class="text-xs font-mono text-taupeDark font-bold uppercase">Núcleo 02</span>
+                <h3 class="font-serif font-bold text-2xl text-ink">LIDERANÇA, CULTURA & PERFORMANCE</h3>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="space-y-3">
+                <h4 class="font-serif font-semibold text-lg text-ink">Serviços e Entregáveis</h4>
+                <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
+                  <li>Treinamentos Exclusivos (Mitigação de Burnout)</li>
+                  <li>Formação de Lideranças em Segurança Psicológica</li>
+                  <li>Workshops Executivos</li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6 bg-panel rounded-2xl border border-architectural">
+                <h4 class="font-serif font-semibold text-base text-ink">Escopo</h4>
+                <p class="text-xs text-inkMuted font-light leading-relaxed">Capacitação de gestores para identificação precoce de riscos, prevenção de assédio e cultura de resiliência corporativa.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 3 -->
+          <div id="pillar-content-3" class="pillar-pane hidden space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-architectural pb-6">
+              <div>
+                <span class="text-xs font-mono text-taupeDark font-bold uppercase">Núcleo 03</span>
+                <h3 class="font-serif font-bold text-2xl text-ink">GESTÃO EMOCIONAL DE EXECUTIVOS C-LEVEL</h3>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="space-y-3">
+                <h4 class="font-serif font-semibold text-lg text-ink">Serviços e Entregáveis</h4>
+                <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
+                  <li>Mapeamento profundo do estado atual</li>
+                  <li>Definição paritária de metas de liderança</li>
+                  <li>Plano estratégico de autogestão emocional</li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6 bg-panel rounded-2xl border border-architectural">
+                <h4 class="font-serif font-semibold text-base text-ink">Escopo</h4>
+                <p class="text-xs text-inkMuted font-light leading-relaxed">Programa individualizado para C-Level, focando em sustentação decisória e inteligência clínica sob alta pressão.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 4 -->
+          <div id="pillar-content-4" class="pillar-pane hidden space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-architectural pb-6">
+              <div>
+                <span class="text-xs font-mono text-taupeDark font-bold uppercase">Núcleo 04</span>
+                <h3 class="font-serif font-bold text-2xl text-ink">SUPERVISÃO & SUPORTE PARA GESTÃO DE PESSOAS</h3>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="space-y-3">
+                <h4 class="font-serif font-semibold text-lg text-ink">Serviços e Entregáveis</h4>
+                <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
+                  <li>Acompanhamento clínico-institucional continuado</li>
+                  <li>Suporte técnico decisório em casos graves</li>
+                  <li>Mediação clínica de conflitos institucionais</li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6 bg-panel rounded-2xl border border-architectural">
+                <h4 class="font-serif font-semibold text-base text-ink">Escopo</h4>
+                <p class="text-xs text-inkMuted font-light leading-relaxed">Retaguarda técnica especializada para sustentar a atuação da Gestão de Pessoas em casos complexos com segurança jurídica.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 5 -->
+          <div id="pillar-content-5" class="pillar-pane hidden space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-architectural pb-6">
+              <div>
+                <span class="text-xs font-mono text-taupeDark font-bold uppercase">Núcleo 05</span>
+                <h3 class="font-serif font-bold text-2xl text-ink">ESCUTA, CRISES & ARQUITETURA</h3>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="space-y-3">
+                <h4 class="font-serif font-semibold text-lg text-ink">Serviços e Entregáveis</h4>
+                <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
+                  <li>Dispositivo de Acolhimento Focal</li>
+                  <li>Apuração Independente de Assédio (Lei 14.457/22)</li>
+                  <li>Pósvenção de Crises e Work Redesign</li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6 bg-panel rounded-2xl border border-architectural">
+                <h4 class="font-serif font-semibold text-base text-ink">Escopo</h4>
+                <p class="text-xs text-inkMuted font-light leading-relaxed">Perícia neutra externa, contenção de pânico, reestruturação de processos pós-INSS e M&A.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <section class="bio-section" id="diretoria">
-      <div class="bio-image">
-        <img src="1000537698_2.jpg" alt="Alan Braga de Paula">
+  <!-- ========================================== -->
+  <!-- 6. SIMULADOR INTERATIVO DE MATURIDADE      -->
+  <!-- ========================================== -->
+  <section id="simulador" class="py-20 sm:py-28 border-b border-architectural bg-cardBg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-4">
+        <span class="text-xs font-mono uppercase tracking-[0.28em] text-taupeDark font-semibold">
+          Ferramenta de Diagnóstico Preliminar
+        </span>
+        <h2 class="font-serif font-normal text-3xl sm:text-5xl text-ink">
+          Simulador de Maturidade de Risco NR-1 & Governança
+        </h2>
+        <p class="text-sm text-inkMuted font-light leading-relaxed">
+          Selecione o perfil da sua empresa nos parâmetros abaixo para obter uma estimativa prévia do nível de exposição a passivos trabalhistas.
+        </p>
       </div>
-      <div class="bio-content">
-        <h3>Alan Braga de Paula</h3>
-        <h4>Diretor Técnico & Fundador</h4>
-        <p>Mais de 26 anos atuando como Consultor em Saúde Mental e Gestão de Pessoas em empresas nacionais e multinacionais, Doutorando em Ciências Médicas (FM-USP), Mestre em Psicologia Social (PUC-SP), Especialista em Saúde Mental (FM-USP), Psicanalista, Psicólogo Clínico e Social com ampla experiência clínica e institucional em consultoria, clínicas institucionais, hospitais e serviços de saúde mental.</p>
-      </div>
-    </section>
-  </main>
 
-  <footer id="contato">
-    <p>&copy; 2026 Sartore: Saúde Mental & Governança Corporativa. Todos os direitos reservados.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-7 bg-panel p-8 sm:p-10 rounded-3xl border border-architectural space-y-6">
+          <div class="space-y-2">
+            <label class="text-xs font-mono font-bold uppercase tracking-wider text-ink block">Porte da Organização</label>
+            <select id="sim-porte" onchange="calculateRiskScore()" class="w-full p-3.5 rounded-xl bg-cardBg border border-architectural text-xs font-medium focus:outline-none">
+              <option value="10">Até 200 colaboradores</option>
+              <option value="20" selected>200 a 1.000 colaboradores</option>
+              <option value="30">Mais de 1.000 colaboradores</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-mono font-bold uppercase tracking-wider text-ink block">Estágio do Inventário NR-1</label>
+            <select id="sim-status" onchange="calculateRiskScore()" class="w-full p-3.5 rounded-xl bg-cardBg border border-architectural text-xs font-medium focus:outline-none">
+              <option value="40">Não iniciado ou incompleto</option>
+              <option value="25" selected>Pesquisa de clima sem matriz epidemiológica</option>
+              <option value="5">Estrutura completa e auditada</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-mono font-bold uppercase tracking-wider text-ink block">Recorrência de Afastamentos / Burnout</label>
+            <select id="sim-casos" onchange="calculateRiskScore()" class="w-full p-3.5 rounded-xl bg-cardBg border border-architectural text-xs font-medium focus:outline-none">
+              <option value="10">Baixa (casos isolados)</option>
+              <option value="20" selected>Moderada</option>
+              <option value="30">Elevada (múltiplas licenças)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-obsidian text-canvas p-8 sm:p-10 rounded-3xl border border-slate-800 space-y-6 flex flex-col justify-between h-full">
+          <div class="space-y-4">
+            <span class="text-xs font-mono uppercase tracking-[0.22em] text-taupe font-semibold block">Resultado Preliminar</span>
+            <div class="flex items-center space-x-6 border-b border-slate-800 pb-6">
+              <div class="text-5xl font-serif font-bold text-white" id="score-display">65%</div>
+              <div>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 block">Nível de Risco:</span>
+                <span id="risk-level-badge" class="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">Elevado</span>
+              </div>
+            </div>
+            <div class="space-y-3 pt-2">
+              <h4 class="font-serif font-semibold text-lg text-white" id="result-title">Exposição Jurídica Potencial</h4>
+              <p class="text-xs text-slate-400 font-light leading-relaxed" id="result-desc">
+                Sua organização possui fragilidades no mapeamento do PGR/NR-1. Recomendamos estruturação técnica imediata.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. LIDERANÇA TÉCNICA (DR. ALAN BRAGA)      -->
+  <!-- ========================================== -->
+  <section id="lideranca" class="py-20 sm:py-28 border-b border-architectural">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Foto com a imagem correta -->
+        <div class="lg:col-span-5">
+          <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-panel border border-architectural relative shadow-md group">
+            <img src="1000537698_2.jpg" alt="Alan Braga de Paula - Diretor Técnico & Fundador" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent flex flex-col justify-end p-6 text-canvas">
+              <span class="text-[10px] font-mono uppercase tracking-[0.24em] text-taupe font-bold">Liderança Especializada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-mono uppercase tracking-[0.28em] text-taupeDark font-semibold">
+            Corpo Técnico & Responsabilidade
+          </span>
+          <div class="space-y-1">
+            <h2 class="font-serif font-normal text-3xl sm:text-4xl md:text-5xl text-ink">
+              Alan Braga de Paula
+            </h2>
+            <p class="text-xs font-mono uppercase tracking-[0.26em] text-taupeDark font-bold pt-1">
+              DIRETOR TÉCNICO & FUNDADOR
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-8 bg-cardBg rounded-3xl border border-architectural shadow-xs space-y-4">
+            <p class="text-sm sm:text-base text-ink font-light leading-relaxed">
+              Mais de 26 anos atuando como Consultor em Saúde Mental e Gestão de Pessoas em empresas nacionais e multinacionais, Doutorando em Ciências Médicas (FM-USP), Mestre em Psicologia Social (PUC-SP), Especialista em Saúde Mental (FM-USP), Psicanalista, Psicólogo Clínico e Social com ampla experiência clínica e institucional em consultório, clínicas institucionais, hospitais e serviços de saúde mental.
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="openBookingModal('Reunião com Dr. Alan Braga')" class="px-6 py-3.5 rounded-full bg-ink text-canvas font-semibold text-xs uppercase tracking-widest hover:bg-taupeDark transition shadow-xs">
+              Agendar Reunião Técnica
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. FOOTER                                  -->
+  <!-- ========================================== -->
+  <footer id="contato" class="bg-obsidian text-canvas py-16 border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 text-xs font-light text-slate-400">
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 text-canvas">
+              <svg viewBox="0 0 100 100" class="w-full h-full fill-none" stroke="currentColor" stroke-width="3">
+                <circle cx="50" cy="38" r="23"/>
+                <circle cx="36" cy="62" r="23"/>
+                <circle cx="64" cy="62" r="23"/>
+              </svg>
+            </div>
+            <span class="font-serif font-bold text-xl tracking-widest text-white uppercase">Sartore</span>
+          </div>
+          <p class="text-xs leading-relaxed max-w-sm">
+            Saúde Mental & Governança Corporativa. Consultoria sênior em conformidade ocupacional e inteligência clínica.
+          </p>
+        </div>
+
+        <div class="md:col-span-7 space-y-3">
+          <h4 class="font-serif font-bold text-sm text-white uppercase tracking-wider">Atendimento Executivo Direto</h4>
+          <p class="flex items-center space-x-2">
+            <span class="text-taupe font-mono">TEL / WHATSAPP:</span>
+            <a href="tel:+5521995124377" class="text-white hover:underline">+55 (21) 99512-4377</a>
+          </p>
+          <p class="flex items-center space-x-2">
+            <span class="text-taupe font-mono">SEDE:</span>
+            <span>Rio de Janeiro - RJ (Atendimento Nacional: Presencial, Remoto e Híbrido)</span>
+          </p>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-slate-800 text-[10px] font-mono text-slate-500 text-center">
+        <p>&copy; 2026 SARTORE Consultoria. Todos os direitos reservados.</p>
+      </div>
+
+    </div>
   </footer>
 
+  <!-- ========================================== -->
+  <!-- 9. MODAL POPUP DE AGENDAMENTO              -->
+  <!-- ========================================== -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden modal-backdrop bg-ink/75 flex items-center justify-center p-4">
+    <div class="bg-cardBg w-full max-w-xl rounded-3xl border border-architectural p-6 sm:p-10 shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto">
+      
+      <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-inkMuted hover:text-ink p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="space-y-2">
+        <span class="text-xs font-mono text-taupeDark uppercase font-bold tracking-widest">Agendamento de Reunião Técnica</span>
+        <h3 class="font-serif font-bold text-2xl text-ink" id="modal-title-text">Diagnóstico Inicial de Governança</h3>
+      </div>
+
+      <form id="modal-form" onsubmit="handleModalFormSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-semibold uppercase tracking-wider text-ink mb-1">Nome Completo</label>
+          <input type="text" required placeholder="Ex: Roberto Silva" class="w-full p-3.5 rounded-xl bg-canvas border border-architectural focus:outline-none">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold uppercase tracking-wider text-ink mb-1">E-mail Corporativo</label>
+            <input type="email" required placeholder="nome@empresa.com.br" class="w-full p-3.5 rounded-xl bg-canvas border border-architectural focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-semibold uppercase tracking-wider text-ink mb-1">WhatsApp</label>
+            <input type="tel" required placeholder="(21) 99512-4377" class="w-full p-3.5 rounded-xl bg-canvas border border-architectural focus:outline-none">
+          </div>
+        </div>
+        <button type="submit" class="w-full py-4 rounded-full bg-ink text-canvas font-bold uppercase tracking-widest hover:bg-taupeDark transition shadow-sm">
+          Confirmar Solicitação
+        </button>
+      </form>
+
+      <div id="modal-feedback" class="hidden p-6 bg-panel rounded-2xl text-center space-y-3">
+        <div class="w-10 h-10 mx-auto rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">✓</div>
+        <h4 class="font-serif font-bold text-lg text-ink">Solicitação Enviada</h4>
+        <p class="text-xs text-inkMuted leading-relaxed">Nossa diretoria técnica entrará em contato em breve.</p>
+        <button onclick="closeBookingModal()" class="px-6 py-2.5 bg-ink text-canvas text-xs uppercase rounded-full">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function switchPillarTab(pillarNum) {
+      for (let i = 1; i <= 5; i++) {
+        const pane = document.getElementById(`pillar-content-${i}`);
+        const btn = document.getElementById(`tab-btn-${i}`);
+        if (pane && btn) {
+          if (i === pillarNum) {
+            pane.classList.remove('hidden');
+            btn.classList.remove('text-inkMuted');
+            btn.classList.add('text-ink', 'border-b-2', 'border-ink');
+          } else {
+            pane.classList.add('hidden');
+            btn.classList.add('text-inkMuted');
+            btn.classList.remove('text-ink', 'border-b-2', 'border-ink');
+          }
+        }
+      }
+    }
+
+    function calculateRiskScore() {
+      const porte = parseInt(document.getElementById('sim-porte').value) || 20;
+      const status = parseInt(document.getElementById('sim-status').value) || 25;
+      const casos = parseInt(document.getElementById('sim-casos').value) || 20;
+      const totalScore = Math.min(100, porte + status + casos + 15);
+      const scoreDisplay = document.getElementById('score-display');
+      const badge = document.getElementById('risk-level-badge');
+      
+      scoreDisplay.innerText = `${totalScore}%`;
+
+      if (totalScore >= 75) {
+        badge.className = "inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/30";
+        badge.innerText = "Crítico";
+      } else if (totalScore >= 50) {
+        badge.className = "inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30";
+        badge.innerText = "Elevado";
+      } else {
+        badge.className = "inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
+        badge.innerText = "Moderado";
+      }
+    }
+
+    function openBookingModal(contextText = null) {
+      document.getElementById('booking-modal').classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.add('hidden');
+      document.getElementById('modal-form').classList.remove('hidden');
+      document.getElementById('modal-feedback').classList.add('hidden');
+    }
+
+    function handleModalFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('modal-form').classList.add('hidden');
+      document.getElementById('modal-feedback').classList.remove('hidden');
+    }
+
+    function toggleMobileNav() {
+      document.getElementById('mobile-nav').classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
