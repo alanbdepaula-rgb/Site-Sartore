@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sartore | Governança Corporativa & Compliance Ocupacional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #070B12;
+            --bg-card: #0F172A;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(7, 11, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--text-main);
+        }
+
+        .brand-tagline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+            color: #070B12;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            opacity: 0.9;
+        }
+
+        main {
+            padding-top: 120px;
+        }
+
+        .hero {
+            padding: 6rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero h2 span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 5%;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--gold-light);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 6rem;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer p + p {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <h1 class="brand-name">SARTORE</h1>
+            <span class="brand-tagline">Governança & Compliance Ocupacional</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#metodologia">Metodologia ETO™</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="https://wa.me/5521995124377" class="btn-cta" target="_blank">Contato Executivo</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <h2>Inteligência Clínica, Compliance Ocupacional e <span>Gestão Estratégica de Riscos</span> (NR-1/PGR).</h2>
+                <p>Consultoria *boutique* de alta performance voltada para Conselhos de Administração, C-Level e Diretorias Executivas, integrando governança e a sustentabilidade humana nas organizações.</p>
+                <a href="https://wa.me/5521995124377" class="btn-cta" target="_blank">Agendar Diagnóstico Executivo</a>
+            </div>
+        </section>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <h3>Compliance NR-1 / PGR</h3>
+                <p>Mitigação avançada de passivos trabalhistas e riscos psicossociais com rigor técnico e conformidade regulatória estrita.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Metodologia ETO™</h3>
+                <p>Abordagem proprietária que traduz décadas de pesquisa acadêmica e inteligência clínica em protocolos corporativos seguros.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Governança C-Level</h3>
+                <p>Alinhamento estratégico para conselhos e lideranças na preservação do capital humano e continuidade operacional.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Sartore Consultoria. Todos os direitos reservados.</p>
+        <p>Atendimento Executivo: +55 (21) 99512-4377 | E-mail: contato@sartoreconsultoria.com.br</p>
+        <p>Rio de Janeiro - RJ (Atendimento Nacional)</p>
+    </footer>
+
+</body>
+</html>
