@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SARTORE | Saúde Mental & Governança Corporativa</title>
+  <title>SARTORE CONSULTORIA | Saúde Mental Corporativa, Carreira e Alta Performance</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +21,15 @@
             sans: ['Plus Jakarta Sans', '-apple-system', 'sans-serif'],
           },
           colors: {
-            canvas: '#FDFDFC',       /* Branco gelo luminoso */
-            panel: '#F4F5F7',        /* Cinza azulado muito claro */
+            canvas: '#FDFDFC',
+            panel: '#F4F5F7',
             cardBg: '#FFFFFF',
-            ink: '#1A202C',          /* Grafite escuro */
+            ink: '#1A202C',
             inkMuted: '#4A5568',
-            primaryBlue: '#1E3A8A',  /* Azul Oxford (Autoridade / Governança) */
-            warmAccent: '#D95F36',   /* Terracota (Calor / Vida / Dinamismo) */
+            primaryBlue: '#1E3A8A',
+            warmAccent: '#D95F36',
             borderSoft: '#E2E8F0',
-            obsidian: '#0F172A',     /* Azul ultra escuro para o rodapé */
+            obsidian: '#0F172A',
           }
         }
       }
@@ -50,7 +50,6 @@
     }
     .border-architectural { border-color: #E2E8F0; }
     ::selection { background-color: #D95F36; color: #FFFFFF; }
-    .modal-backdrop { backdrop-filter: blur(12px); }
     .card-transition {
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     }
@@ -63,27 +62,25 @@
 </head>
 <body class="bg-editorial-grid text-ink flex flex-col min-h-screen">
 
-  <!-- ========================================== -->
-  <!-- 1. HEADER INSTITUCIONAL                    -->
-  <!-- ========================================== -->
+  <!-- 1. HEADER INSTITUCIONAL -->
   <header class="sticky top-0 z-40 bg-[#FDFDFC]/95 backdrop-blur-md border-b border-architectural transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-32 flex items-center justify-between">
       
-      <!-- LOGO OFICIAL NO TOPO (Tamanho ampliado para h-24 / sm:h-28) -->
+      <!-- LOGO OFICIAL NO TOPO -->
       <a href="#" class="flex items-center group py-2">
-        <img src="logo.png" alt="SC SARTORE - Saúde Mental & Governança Corporativa" class="h-24 sm:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='1000547639.jpg';">
+        <img src="logo.png" alt="Sartore Consultoria - Saúde Mental, Carreira e Alta Performance" class="h-24 sm:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='1000561662.jpg';">
       </a>
 
       <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-[0.2em] text-inkMuted">
-        <a href="#marca" class="hover:text-primaryBlue transition-colors duration-200">A Marca</a>
-        <a href="#processo-nr1" class="hover:text-primaryBlue transition-colors duration-200">Processo NR-1</a>
-        <a href="#processo-gestao" class="hover:text-primaryBlue transition-colors duration-200">Alta Performance</a>
+        <a href="#filosofia" class="hover:text-primaryBlue transition-colors duration-200">Filosofia</a>
+        <a href="#corporativo" class="hover:text-primaryBlue transition-colors duration-200">Organizações (PJ)</a>
+        <a href="#profissionais" class="hover:text-warmAccent transition-colors duration-200">Profissionais (PF)</a>
         <a href="#portfolio" class="hover:text-primaryBlue transition-colors duration-200">Portfólio</a>
-        <a href="#simulador" class="hover:text-primaryBlue transition-colors duration-200">Simulador</a>
+        <a href="#nr1-base" class="hover:text-primaryBlue transition-colors duration-200">NR-1</a>
       </nav>
 
       <div class="flex items-center space-x-4">
-        <button onclick="toggleMobileNav()" class="lg:hidden p-2 text-ink rounded-lg border border-architectural">
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 text-ink rounded-lg border border-architectural" aria-label="Abrir menu">
           <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -93,43 +90,40 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-nav" class="hidden lg:hidden bg-panel border-b border-architectural px-6 py-6 space-y-4">
-      <a href="#marca" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Nossa Marca</a>
-      <a href="#frentes" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Atuação</a>
-      <a href="#processo-nr1" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Processo NR-1</a>
-      <a href="#processo-gestao" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-warmAccent">Alta Performance</a>
-      <a href="#portfolio" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Portfólio</a>
+      <a href="#filosofia" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Filosofia</a>
+      <a href="#corporativo" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Organizações (PJ)</a>
+      <a href="#profissionais" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-warmAccent">Profissionais (PF)</a>
+      <a href="#portfolio" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Portfólio Completo</a>
+      <a href="#nr1-base" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">NR-1 Aprofundada</a>
     </div>
   </header>
 
-  <!-- ========================================== -->
-  <!-- 2. HERO SECTION                            -->
-  <!-- ========================================== -->
+  <!-- 2. HERO SECTION -->
   <section class="relative py-20 sm:py-28 border-b border-architectural overflow-hidden bg-canvas">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl space-y-8">
         <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-cardBg border border-architectural shadow-sm">
           <span class="w-2 h-2 rounded-full bg-warmAccent"></span>
-          <span class="text-[11px] font-mono uppercase tracking-[0.22em] text-primaryBlue font-bold">
-            Engenharia de Governança &bull; Presença Nacional
+          <span class="text-[11px] font-mono uppercase tracking-[0.2em] text-primaryBlue font-bold">
+            Sartore Consultoria &bull; Saúde Mental, Carreira &amp; Alta Performance
           </span>
         </div>
 
         <h1 class="font-serif font-normal text-4xl sm:text-5xl md:text-6xl text-ink leading-[1.1] tracking-tight">
-          Inteligência Clínica, Compliance Ocupacional e Gestão Estratégica de Riscos Psicossociais
+          Saúde Mental nas Organizações e Gestão de Carreira &amp; Alta Performance
         </h1>
 
         <p class="text-base sm:text-lg text-inkMuted font-light leading-relaxed max-w-2xl">
-          Arquitetura de soluções corporativas desenhadas com exatidão cirúrgica e excelência clínica para responder às exigências de Conselhos de Administração e de profissionais de elite.
+          Consultoria especializada de alto padrão com atuação dedicada a <strong>corporações (PJ)</strong> — em prevenção, transformação e potencialização, e pós-venção — e a <strong>profissionais de alta responsabilidade (PF)</strong>, líderes, executivos e CEOs.
         </p>
 
-        <!-- OS DOIS BOTÕES ESTRATÉGICOS -->
         <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
-          <a href="#processo-nr1" class="px-8 py-4 rounded-full bg-primaryBlue text-white font-bold text-xs uppercase tracking-[0.16em] hover:bg-ink transition-all shadow-md text-center">
-            Conheça o Processo NR-1
+          <a href="#corporativo" class="px-8 py-4 rounded-full bg-primaryBlue text-white font-bold text-xs uppercase tracking-[0.16em] hover:bg-ink transition-all shadow-md text-center">
+            Para Organizações (PJ)
           </a>
-          <a href="#processo-gestao" class="px-8 py-4 rounded-full bg-warmAccent text-white font-bold text-xs uppercase tracking-[0.16em] hover:bg-primaryBlue transition-all shadow-md text-center">
-            Jornada de Gestão Emocional
+          <a href="#profissionais" class="px-8 py-4 rounded-full bg-warmAccent text-white font-bold text-xs uppercase tracking-[0.16em] hover:bg-primaryBlue transition-all shadow-md text-center">
+            Para Profissionais &amp; Líderes (PF)
           </a>
         </div>
       </div>
@@ -137,454 +131,294 @@
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- 3. NOSSA MARCA DE TRABALHO (MANIFESTO)     -->
-  <!-- ========================================== -->
-  <section id="marca" class="py-20 sm:py-28 border-b border-architectural bg-panel">
+  <!-- 3. FILOSOFIA DE TRABALHO -->
+  <section id="filosofia" class="py-20 sm:py-28 border-b border-architectural bg-panel">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
       <span class="text-xs font-mono uppercase tracking-[0.28em] text-warmAccent font-bold block">
-        Nossa Marca de Trabalho
+        Concepção &amp; Rigor Clínico
       </span>
       <h2 class="font-serif font-normal text-3xl sm:text-4xl text-primaryBlue leading-tight">
-        Acreditamos que nenhum modelo de prateleira responde à singularidade de uma organização ou de um profissional de elite.
+        Romper padrões repetitivos que limitam pessoas e organizações para ampliar criatividade, soluções e rendimento.
       </h2>
       <div class="w-16 h-[2px] bg-warmAccent mx-auto"></div>
       <p class="text-base text-inkMuted font-light leading-relaxed max-w-3xl mx-auto">
-        A nossa filosofia baseia-se em unir a excelência clínica em saúde mental às exigências do mundo corporativo. Nosso trabalho consiste em identificar o contorno exato da cultura empresarial, mapear focos de adoecimento e promover um ajuste fino na governança para proteger o patrimônio humano e decisório da sua empresa, bem como otimizar a gestão emocional de profissionais que buscam a alta performance e o alcance de novos patamares em suas carreiras.
+        Tanto no funcionamento coletivo de uma empresa quanto na trajetória de um profissional, sintomas emocionais e dinâmicas cristalizadas tendem a produzir respostas sempre iguais diante de novas demandas — estreitando saídas e comprometendo resultados. A Sartore Consultoria atua longe das soluções automáticas de prateleira: unimos leitura clínica aprofundada e estratégia institucional para destravar potencial, sustentar decisões complexas e gerar impacto consistente a curto, médio e longo prazo.
       </p>
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- 4. AS DUAS FRENTES DE ATUAÇÃO              -->
-  <!-- ========================================== -->
-  <section id="frentes" class="py-20 sm:py-28 border-b border-architectural bg-canvas">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-      
-      <div class="max-w-3xl space-y-4 text-center mx-auto">
-        <span class="text-xs font-mono uppercase tracking-[0.28em] text-warmAccent font-bold">
-          Estratégia & Atuação Dividida
-        </span>
-        <h2 class="font-serif font-normal text-3xl sm:text-5xl text-primaryBlue">
-          Do Diagnóstico à Alta Performance
-        </h2>
-        <p class="text-sm text-inkMuted font-light leading-relaxed">
-          Para atender às urgências do mercado de forma cirúrgica, nossa consultoria divide-se em duas grandes frentes estratégicas: a proteção jurídica do CNPJ e a blindagem emocional do CPF (liderança de elite).
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- FRENTE 1 -->
-        <div class="p-8 sm:p-10 rounded-3xl bg-cardBg border border-architectural space-y-6 shadow-sm card-transition border-t-4 border-t-primaryBlue">
-          <span class="px-3 py-1 rounded-full bg-panel text-primaryBlue text-[10px] font-mono uppercase tracking-widest font-bold">
-            Frente 01 &bull; Proteção & Compliance
-          </span>
-          <h3 class="font-serif font-bold text-2xl sm:text-3xl text-primaryBlue">
-            Governança Corporativa e Compliance em Saúde Mental
-          </h3>
-          <p class="text-sm text-inkMuted font-light leading-relaxed">
-            Focada no diagnóstico e adequação normativa das organizações. Evitamos passivos trabalhistas mapeando os riscos psicossociais e estruturando intervenções preventivas.
-          </p>
-        </div>
-
-        <!-- FRENTE 2 -->
-        <div class="p-8 sm:p-10 rounded-3xl bg-cardBg border border-architectural space-y-6 shadow-sm card-transition border-t-4 border-t-warmAccent">
-          <span class="px-3 py-1 rounded-full bg-panel text-warmAccent text-[10px] font-mono uppercase tracking-widest font-bold">
-            Frente 02 &bull; Intervenção de Elite
-          </span>
-          <h3 class="font-serif font-bold text-2xl sm:text-3xl text-primaryBlue">
-            Inteligência Clínica Estratégica
-          </h3>
-          <p class="text-sm text-inkMuted font-light leading-relaxed">
-            Focada na sustentação psicológica de carreiras e operações críticas. É a excelência clínica aplicada para garantir o topo da performance executiva ou para conter crises graves.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- 5. PROCESSO NR-1                           -->
-  <!-- ========================================== -->
-  <section id="processo-nr1" class="py-20 sm:py-28 border-b border-architectural bg-panel">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+  <!-- 4. DESTAQUE 01: ORGANIZACOES (PJ) -->
+  <section id="corporativo" class="py-20 sm:py-28 border-b border-architectural bg-canvas">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
       
       <div class="max-w-3xl space-y-4">
-        <span class="text-xs font-mono uppercase tracking-[0.28em] text-primaryBlue font-bold">
-          Jornada de Compliance Ocupacional
-        </span>
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-panel text-primaryBlue text-[10px] font-mono uppercase tracking-widest font-bold">
+          <span>Destaque 01 &bull; Pessoa Jurídica (Corporações)</span>
+        </div>
         <h2 class="font-serif font-normal text-3xl sm:text-5xl text-primaryBlue">
-          A Metodologia do Diagnóstico à Solução (NR-1)
+          Gestão de Saúde Mental Corporativa
         </h2>
-        <p class="text-sm text-inkMuted font-light leading-relaxed">
-          Como conduzimos a adequação da sua empresa de ponta a ponta, garantindo segurança jurídica e saúde institucional.
+        <p class="text-sm sm:text-base text-inkMuted font-light leading-relaxed">
+          Soluções sob medida para cuidar da saúde psíquica na organização — respondendo tanto a demandas identificadas em avaliações de riscos psicossociais (NR-1) quanto a necessidades próprias da empresa, de suas lideranças ou de setores específicos.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-        <div class="bg-cardBg p-6 rounded-2xl border border-architectural shadow-sm relative z-10 space-y-3">
-          <div class="w-8 h-8 rounded-full bg-primaryBlue text-white flex items-center justify-center font-bold text-sm">1</div>
-          <h4 class="font-serif font-bold text-lg text-primaryBlue">Entrevista e Alinhamento</h4>
-          <p class="text-xs text-inkMuted font-light leading-relaxed">O processo inicia-se com entrevistas diretivas com a Diretoria Executiva e os Business Partners (BPs) de RH. O objetivo é compreender em profundidade o nível de maturidade da empresa e o histórico interno.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="p-8 rounded-3xl bg-cardBg border border-architectural shadow-sm card-transition border-t-4 border-t-primaryBlue flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-primaryBlue font-bold bg-panel px-3 py-1 rounded-full inline-block">
+              Movimento 01
+            </span>
+            <h3 class="font-serif font-bold text-2xl text-primaryBlue">
+              Prevenção
+            </h3>
+            <p class="text-xs text-inkMuted font-light leading-relaxed">
+              Leitura antecipada de pressões, vulnerabilidades e pontos de repetição institucional antes que o desgaste se instale ou se cronifique.
+            </p>
+            <ul class="space-y-2.5 pt-3 border-t border-architectural text-xs text-inkMuted font-light list-disc list-inside">
+              <li>Avaliações aprofundadas em saúde mental (setoriais, lideranças e cultura organizacional).</li>
+              <li>Serviços de atendimento psicológico para colaboradores e canal externo de urgência psicológica.</li>
+              <li>Suporte técnico-clínico contínuo para equipes de RH e Business Partners (BPs).</li>
+            </ul>
+          </div>
         </div>
-        <div class="bg-cardBg p-6 rounded-2xl border border-architectural shadow-sm relative z-10 space-y-3">
-          <div class="w-8 h-8 rounded-full bg-primaryBlue text-white flex items-center justify-center font-bold text-sm">2</div>
-          <h4 class="font-serif font-bold text-lg text-primaryBlue">Mapeamento Diagnóstico</h4>
-          <p class="text-xs text-inkMuted font-light leading-relaxed">Aplicamos nossa metodologia (entrevistas estratégicas, levantamento de dados, escalas e testes). Identificamos origens do adoecimento e cruzamos a realidade clínica com os parâmetros estritos da exigência legal.</p>
+
+        <div class="p-8 rounded-3xl bg-cardBg border border-architectural shadow-sm card-transition border-t-4 border-t-warmAccent flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-warmAccent font-bold bg-panel px-3 py-1 rounded-full inline-block">
+              Movimento 02
+            </span>
+            <h3 class="font-serif font-bold text-2xl text-primaryBlue">
+              Transformação e Potencialização
+            </h3>
+            <p class="text-xs text-inkMuted font-light leading-relaxed">
+              Intervenção sobre padrões cristalizados de funcionamento para expandir repertório, criatividade, capacidade de solução e rendimento sustentável.
+            </p>
+            <ul class="space-y-2.5 pt-3 border-t border-architectural text-xs text-inkMuted font-light list-disc list-inside">
+              <li>Intervenções direcionadas com grupos, áreas críticas, lideranças ou organização como um todo.</li>
+              <li>Desdobramento prático de soluções para demandas mapeadas via NR-1 ou solicitações internas.</li>
+              <li>Acompanhamento de curto, médio e longo prazo com foco em saúde mental e entrega consistente.</li>
+            </ul>
+          </div>
         </div>
-        <div class="bg-cardBg p-6 rounded-2xl border border-architectural shadow-sm relative z-10 space-y-3">
-          <div class="w-8 h-8 rounded-full bg-primaryBlue text-white flex items-center justify-center font-bold text-sm">3</div>
-          <h4 class="font-serif font-bold text-lg text-primaryBlue">Arquitetura de Soluções</h4>
-          <p class="text-xs text-inkMuted font-light leading-relaxed">Com os dados consolidados, entregamos a matriz de severidade e o dossiê epidemiológico ao Conselho. Propomos um plano de mitigação com intervenções cirúrgicas e ajustes de processos.</p>
+
+        <div class="p-8 rounded-3xl bg-cardBg border border-architectural shadow-sm card-transition border-t-4 border-t-obsidian flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-ink font-bold bg-panel px-3 py-1 rounded-full inline-block">
+              Movimento 03
+            </span>
+            <h3 class="font-serif font-bold text-2xl text-primaryBlue">
+              Pós-venção
+            </h3>
+            <p class="text-xs text-inkMuted font-light leading-relaxed">
+              Atuação clínica, ética e especializada diante de eventos críticos, traumas ou rupturas agudas no ambiente corporativo.
+            </p>
+            <ul class="space-y-2.5 pt-3 border-t border-architectural text-xs text-inkMuted font-light list-disc list-inside">
+              <li>Dispositivos de acolhimento e escuta qualificada após ocorrências graves ou luto institucional.</li>
+              <li>Retaguarda técnica para a alta gestão e RH na condução de cenários sensíveis.</li>
+              <li>Elaboração coletiva para evitar cronificação de sintomas e restabelecer condições de trabalho.</li>
+            </ul>
+          </div>
         </div>
-        <div class="bg-cardBg p-6 rounded-2xl border border-architectural shadow-sm relative z-10 space-y-3">
-          <div class="w-8 h-8 rounded-full bg-primaryBlue text-white flex items-center justify-center font-bold text-sm">4</div>
-          <h4 class="font-serif font-bold text-lg text-primaryBlue">Monitoramento Periódico</h4>
-          <p class="text-xs text-inkMuted font-light leading-relaxed">A consultoria não termina no laudo. Estabelecemos um acompanhamento contínuo das ações propostas, medindo ativamente os índices para garantir a eficácia do clima e o compliance legal.</p>
-        </div>
+
       </div>
 
-      <!-- Botões Processo NR-1 -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://wa.me/5521995124377?text=Olá,%20desejo%20agendar%20reunião%20sobre%20NR-1" target="_blank" class="px-8 py-4 rounded-full bg-primaryBlue text-white font-bold text-xs uppercase tracking-[0.16em] hover:bg-ink transition-all shadow-md text-center">
-          Agende uma avaliação
-        </a>
-        <a href="#simulador" class="px-8 py-4 rounded-full bg-cardBg border border-primaryBlue text-primaryBlue font-bold text-xs uppercase tracking-[0.16em] hover:bg-primaryBlue hover:text-white transition-all shadow-sm text-center">
-          Simule maturidade NR-1
+      <div class="pt-4">
+        <a href="https://wa.me/5521995124377?text=Olá,%20gostaria%20de%20conversar%20sobre%20Gestão%20de%20Saúde%20Mental%20Corporativa" target="_blank" class="inline-block px-8 py-4 rounded-full bg-primaryBlue text-white font-bold text-xs uppercase tracking-[0.16em] hover:bg-ink transition-all shadow-md text-center">
+          Agendar Conversa Corporativa
         </a>
       </div>
 
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- 6. PROCESSO DE GESTÃO EMOCIONAL            -->
-  <!-- ========================================== -->
-  <section id="processo-gestao" class="py-20 sm:py-28 border-b border-architectural bg-canvas">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+  <!-- 5. DESTAQUE 02: PROFISSIONAIS (PF) -->
+  <section id="profissionais" class="py-20 sm:py-28 border-b border-architectural bg-panel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
       
       <div class="max-w-3xl space-y-4">
-        <span class="text-xs font-mono uppercase tracking-[0.28em] text-warmAccent font-bold">
-          Inteligência Clínica e Performance
-        </span>
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cardBg text-warmAccent text-[10px] font-mono uppercase tracking-widest font-bold border border-architectural">
+          <span>Destaque 02 &bull; Pessoa Física (Lideranças &amp; Executivos)</span>
+        </div>
         <h2 class="font-serif font-normal text-3xl sm:text-5xl text-primaryBlue">
-          Engenharia Comportamental
+          Gestão de Carreira e Alta Performance
         </h2>
-        <p class="text-sm text-inkMuted font-light leading-relaxed">
-          Duas abordagens de altíssima precisão para alavancar objetivos de carreira e eliminar bloqueios emocionais. Desenhadas para responder exatamente ao momento e ao desafio que o profissional de elite enfrenta.
+        <p class="text-sm sm:text-base text-inkMuted font-light leading-relaxed">
+          Atendimento individualizado de alta precisão para profissionais de alta responsabilidade, alta complexidade ou alto potencial, líderes, executivos e CEOs.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         
-        <!-- Atuação 1 -->
-        <div class="bg-cardBg p-8 rounded-3xl border border-architectural shadow-sm space-y-6">
-          <div class="inline-block px-3 py-1 bg-panel rounded-full text-[10px] font-mono uppercase tracking-widest text-primaryBlue font-bold mb-2">
-            Frente 01: Transição e Ascensão
+        <div class="bg-cardBg p-8 sm:p-10 rounded-3xl border border-architectural shadow-sm space-y-6 card-transition border-t-4 border-t-primaryBlue">
+          <div class="inline-block px-3 py-1 bg-panel rounded-full text-[10px] font-mono uppercase tracking-widest text-primaryBlue font-bold">
+            Frente 01 &bull; Transição e Ascensão
           </div>
-          <h3 class="font-serif font-bold text-2xl text-primaryBlue">Planejamento Estratégico e Redução de Gaps</h3>
-          <p class="text-xs text-inkMuted font-medium">Focado em profissionais com objetivos claros de ascensão, transição de carreira ou conquista de novas posições.</p>
+          <h3 class="font-serif font-bold text-2xl text-primaryBlue">
+            Gestão de Carreira, Transição e Ascensão
+          </h3>
+          <p class="text-xs text-inkMuted font-medium">
+            Para profissionais com metas claras de evolução, reposicionamento estratégico, transição de carreira ou conquista de novas posições executivas.
+          </p>
           <ul class="space-y-4 pt-4 border-t border-architectural">
             <li class="text-xs text-inkMuted font-light leading-relaxed">
-              <strong class="text-primaryBlue">Alinhamento e Mercado:</strong> Iniciamos com o mapeamento do objetivo. Realizamos um amplo levantamento do mercado, buscando vagas e avaliando a viabilidade real de acordo com a meta.
+              <strong class="text-primaryBlue">Alinhamento e Leitura de Mercado:</strong> Mapeamento criterioso do objetivo profissional, análise de oportunidades e avaliação realista de viabilidade frente ao cenário atual.
             </li>
             <li class="text-xs text-inkMuted font-light leading-relaxed">
-              <strong class="text-primaryBlue">Diagnóstico do Estado Atual:</strong> Avaliação profunda e completa do profissional, mapeando rigorosamente todas as suas competências (pessoais, comportamentais e técnicas).
+              <strong class="text-primaryBlue">Mapeamento Global do Estado Atual:</strong> Leitura aprofundada e abrangente do profissional em todas as suas vertentes — trajetória, recursos, posicionamento, padrões de decisão e contexto atual.
             </li>
             <li class="text-xs text-inkMuted font-light leading-relaxed">
-              <strong class="text-primaryBlue">Eliminação de Gaps:</strong> Cruzamos o estado atual com as exigências do cargo-alvo. A partir dos gaps identificados, propomos e acompanhamos ações cirúrgicas para eliminá-los, pavimentando o alcance da meta.
+              <strong class="text-primaryBlue">Eliminação de Gaps:</strong> Cruzamento entre o momento atual e as exigências da posição-alvo, estruturando ações direcionadas para superar lacunas e sustentar a ascensão.
             </li>
           </ul>
         </div>
 
-        <!-- Atuação 2 -->
-        <div class="bg-cardBg p-8 rounded-3xl border border-architectural shadow-sm space-y-6">
-          <div class="inline-block px-3 py-1 bg-panel rounded-full text-[10px] font-mono uppercase tracking-widest text-warmAccent font-bold mb-2">
-            Frente 02: Desbloqueio Clínico
+        <div class="bg-cardBg p-8 sm:p-10 rounded-3xl border border-architectural shadow-sm space-y-6 card-transition border-t-4 border-t-warmAccent">
+          <div class="inline-block px-3 py-1 bg-panel rounded-full text-[10px] font-mono uppercase tracking-widest text-warmAccent font-bold">
+            Frente 02 &bull; Desbloqueio Clínico
           </div>
-          <h3 class="font-serif font-bold text-2xl text-primaryBlue">Gestão Emocional Focal para Alta Performance</h3>
-          <p class="text-xs text-inkMuted font-medium">Focado em executivos, líderes e profissionais liberais que percebem questões emocionais prejudicando o seu rendimento.</p>
+          <h3 class="font-serif font-bold text-2xl text-primaryBlue">
+            Gestão Emocional para Alta Performance
+          </h3>
+          <p class="text-xs text-inkMuted font-medium">
+            Para executivos, líderes, CEOs e profissionais liberais que identificam entraves emocionais limitando seu rendimento ou qualidade decisória.
+          </p>
           <ul class="space-y-4 pt-4 border-t border-architectural">
             <li class="text-xs text-inkMuted font-light leading-relaxed">
-              <strong class="text-primaryBlue">O Desafio:</strong> Destinado ao profissional que sabe que poderia executar sua função com muito mais eficiência, mas é impedido por barreiras e sintomas emocionais (ansiedade, estresse, autossabotagem, atritos).
+              <strong class="text-primaryBlue">O Impasse:</strong> Voltado a quem possui alta capacidade técnica e estratégica, mas encontra barreiras emocionais (ansiedade, sobrecarga, autossabotagem, atritos recorrentes) que travam o desempenho.
             </li>
             <li class="text-xs text-inkMuted font-light leading-relaxed">
-              <strong class="text-primaryBlue">Intervenção Focalizada:</strong> Diferente de um processo terapêutico convencional (longo e generalista), o nosso trabalho de Inteligência Clínica é altamente especializado na dor e na trava profissional específica.
+              <strong class="text-primaryBlue">Intervenção Focalizada:</strong> Trabalho clínico especializado e direcionado ao ponto específico de repetição ou bloqueio que interfere na atuação profissional.
             </li>
             <li class="text-xs text-inkMuted font-light leading-relaxed">
-              <strong class="text-primaryBlue">Resultados Acelerados:</strong> Por ser uma intervenção especializada e direta no bloqueio, o processo costuma ocorrer em um tempo muito menor. Com isso, o profissional aumenta a possibilidade de superar as barreiras emocionais e retomar a otimização máxima do seu trabalho de forma rápida e incisiva.
+              <strong class="text-primaryBlue">Ampliação de Potência:</strong> Aumento de clareza, criatividade e fluidez decisória para retomar e sustentar o mais alto nível de entrega profissional.
             </li>
           </ul>
         </div>
 
       </div>
 
-      <div class="pt-8 text-center">
-        <a href="https://wa.me/5521995124377?text=Olá,%20desejo%20solicitar%20atendimento%20exclusivo%20de%20Gestão%20Emocional" target="_blank" class="inline-block px-8 py-4 rounded-full bg-warmAccent text-white font-bold text-xs uppercase tracking-[0.16em] hover:bg-primaryBlue transition-all shadow-md text-center">
-          Solicitar Atendimento Exclusivo
+      <div class="pt-4">
+        <a href="https://wa.me/5521995124377?text=Olá,%20gostaria%20de%20solicitar%20atendimento%20em%20Gestão%20de%20Carreira%20e%20Alta%20Performance" target="_blank" class="inline-block px-8 py-4 rounded-full bg-warmAccent text-white font-bold text-xs uppercase tracking-[0.16em] hover:bg-primaryBlue transition-all shadow-md text-center">
+          Solicitar Atendimento Individual
         </a>
       </div>
 
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- 7. CASES DE SUCESSO (A PROVA REAL)         -->
-  <!-- ========================================== -->
-  <section class="py-20 sm:py-28 border-b border-architectural bg-panel">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      
-      <div class="max-w-3xl space-y-4">
-        <span class="text-xs font-mono uppercase tracking-[0.28em] text-warmAccent font-bold">
-          A Prova Real
-        </span>
-        <h2 class="font-serif font-normal text-3xl sm:text-4xl text-primaryBlue">
-          Cases de Impacto Sartore
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Case 1: NR-1 -->
-        <div class="bg-cardBg rounded-3xl border border-architectural p-8 space-y-5 shadow-sm card-transition flex flex-col">
-          <span class="text-[10px] font-mono uppercase tracking-widest text-primaryBlue font-bold bg-panel px-3 py-1 rounded-full w-fit">Governança (NR-1)</span>
-          <h3 class="font-serif font-bold text-xl text-primaryBlue">Rigor Clínico e Blindagem Legal (Logística)</h3>
-          <div class="text-xs text-inkMuted font-light leading-relaxed space-y-2 flex-grow">
-            <p><strong>O Desafio:</strong> Uma empresa de grande porte do setor de logística e operações no Estado do Rio de Janeiro enfrentava aumento crítico de burnout e risco de autuação trabalhista por não possuir o inventário psicossocial da NR-1.</p>
-            <p><strong>A Intervenção:</strong> Realizamos entrevistas diretivas com a Diretoria Executiva e BPs de RH. Aplicamos nossa metodologia (entrevistas estratégicas, levantamento de dados, escalas e testes avaliativos) para identificar origens estruturais. Cruzamos a realidade clínica com os parâmetros legais e implementamos um plano de mitigação com acompanhamento constante.</p>
-          </div>
-          <div class="p-3 mt-4 rounded-xl bg-panel border border-architectural text-[11px] text-primaryBlue font-medium italic">
-            "Resultado: Em 12 meses, queda acentuada nos afastamentos psicológicos, alcançou as conformidades exigidas pela NR-1, eliminando a exposição jurídica, e auditou com sucesso o pilar 'Social' ESG."
-          </div>
-        </div>
-
-        <!-- Case 2: Alta Performance -->
-        <div class="bg-obsidian text-canvas rounded-3xl border border-slate-800 p-8 space-y-5 shadow-sm card-transition flex flex-col">
-          <span class="text-[10px] font-mono uppercase tracking-widest text-warmAccent font-bold bg-slate-800 px-3 py-1 rounded-full w-fit">Alta Performance</span>
-          <h3 class="font-serif font-bold text-xl text-white">Ascensão à Vice-Presidência (Multinacional)</h3>
-          <div class="text-xs text-slate-300 font-light leading-relaxed space-y-2 flex-grow">
-            <p><strong>O Desafio:</strong> Um alto diretor de uma companhia mineradora multinacional, baseado em São Paulo, possuía o objetivo de curto prazo de ascender à Vice-Presidência de uma corporação global, exigindo decisões de altíssimo impacto e extremo preparo emocional.</p>
-            <p><strong>A Intervenção:</strong> Após análise detalhada da viabilidade de mercado e profundo mapeamento de histórico. A partir de um amplo mapeamento de suas competências, identificamos um gap (até então desconhecido) entre uma competência comportamental e as exigências do cargo. No caso, era um traço de personalidade de arrogância que repercutia na forma como se relacionava e dificultava sua ascensão. Iniciamos um trabalho focal sobre esse traço, identificando suas origens e manutenção.</p>
-          </div>
-          <div class="p-3 mt-4 rounded-xl bg-slate-900 border border-slate-700 text-[11px] text-warmAccent font-medium italic">
-            "Resultado: O executivo otimizou sua gestão emocional, reavaliou propostas inadequadas e hoje atua na liderança executiva almejada, superando seus gaps com extrema satisfação."
-          </div>
-        </div>
-
-        <!-- Case 3: Crises (Complexo Comercial/Varejo) -->
-        <div class="bg-cardBg rounded-3xl border border-architectural p-8 space-y-5 shadow-sm card-transition flex flex-col">
-          <span class="text-[10px] font-mono uppercase tracking-widest text-primaryBlue font-bold bg-panel px-3 py-1 rounded-full w-fit">Contenção de Crises</span>
-          <h3 class="font-serif font-bold text-xl text-primaryBlue">Pósvenção e Trauma Institucional</h3>
-          <div class="text-xs text-inkMuted font-light leading-relaxed space-y-2 flex-grow">
-            <p><strong>O Desafio:</strong> A ocorrência de um evento traumático (suicídio) nas dependências de um megacomplexo comercial e de varejo de alta circulação diária, pertencente a um importante grupo corporativo nacional, gerou um risco imediato de pânico generalizado entre colaboradores, parceiros de negócios e clientes. O cenário ameaçava desencadear paralisia operacional, afastamentos em massa e a cronificação de traumas generalizados.</p>
-            <p><strong>A Intervenção:</strong> A atuação da Sartore foi imediata para conter e dissolver o impacto do trauma. Implantamos um dispositivo de acolhimento e escuta clínica focalizada in loco, atuando de forma neutra e especializada. Oferecemos retaguarda técnica e consultiva para sustentar a decisão da alta gestão e líderes de RH na crise.</p>
-          </div>
-          <div class="p-3 mt-4 rounded-xl bg-panel border border-architectural text-[11px] text-primaryBlue font-medium italic">
-            "Resultado: A gestão técnica e ética do luto impediu sintomas coletivos crônicos e fobias. O clima foi estabilizado, preservando a saúde mental de todos os envolvidos."
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================== -->
-  <!-- 8. PORTFÓLIO COMPLETO REORGANIZADO         -->
-  <!-- ========================================== -->
+  <!-- 6. VISÃO GERAL DO PORTFÓLIO -->
   <section id="portfolio" class="py-20 sm:py-28 border-b border-architectural bg-canvas">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="max-w-3xl space-y-4">
         <span class="text-xs font-mono uppercase tracking-[0.28em] text-warmAccent font-bold">
-          Arquitetura Detalhada
+          Arquitetura de Serviços
         </span>
         <h2 class="font-serif font-normal text-3xl sm:text-4xl text-primaryBlue">
-          Catálogo Completo de Serviços
+          Portfólio Completo: Destaques e Pano de Fundo
         </h2>
       </div>
 
       <div class="bg-cardBg rounded-3xl border border-architectural overflow-hidden shadow-sm">
         
-        <!-- Abas do Portfólio -->
         <div class="flex flex-wrap border-b border-architectural bg-panel overflow-x-auto">
-          <!-- Governança -->
           <button onclick="switchPillarTab(1)" id="tab-btn-1" class="px-6 py-4 text-[11px] font-mono font-bold uppercase tracking-wider text-primaryBlue border-b-2 border-primaryBlue transition-all whitespace-nowrap">
-            1. Diagnóstico PGR / NR-1
+            Destaque 1: Saúde Mental Corporativa (PJ)
           </button>
-          <button onclick="switchPillarTab(2)" id="tab-btn-2" class="px-6 py-4 text-[11px] font-mono font-bold uppercase tracking-wider text-inkMuted hover:text-primaryBlue transition-all whitespace-nowrap">
-            2. Soluções & Selos Legais
+          <button onclick="switchPillarTab(2)" id="tab-btn-2" class="px-6 py-4 text-[11px] font-mono font-bold uppercase tracking-wider text-inkMuted hover:text-warmAccent transition-all whitespace-nowrap">
+            Destaque 2: Carreira &amp; Alta Performance (PF)
           </button>
-          <!-- Inteligência Clínica -->
-          <button onclick="switchPillarTab(3)" id="tab-btn-3" class="px-6 py-4 text-[11px] font-mono font-bold uppercase tracking-wider text-inkMuted hover:text-warmAccent transition-all whitespace-nowrap">
-            3. Alta Performance
-          </button>
-          <button onclick="switchPillarTab(4)" id="tab-btn-4" class="px-6 py-4 text-[11px] font-mono font-bold uppercase tracking-wider text-inkMuted hover:text-warmAccent transition-all whitespace-nowrap">
-            4. Retaguarda de RH
-          </button>
-          <button onclick="switchPillarTab(5)" id="tab-btn-5" class="px-6 py-4 text-[11px] font-mono font-bold uppercase tracking-wider text-inkMuted hover:text-warmAccent transition-all whitespace-nowrap">
-            5. Contenção de Crises
+          <button onclick="switchPillarTab(3)" id="tab-btn-3" class="px-6 py-4 text-[11px] font-mono font-bold uppercase tracking-wider text-inkMuted hover:text-primaryBlue transition-all whitespace-nowrap">
+            Pano de Fundo: NR-1 &amp; Apoio Complementar
           </button>
         </div>
 
         <div class="p-8 sm:p-10">
-          <!-- CONTEÚDO 1 -->
           <div id="pillar-content-1" class="pillar-pane space-y-6">
-            <span class="text-[10px] font-mono text-primaryBlue font-bold uppercase tracking-widest bg-panel px-3 py-1 rounded-full">Frente: Governança Corporativa</span>
-            <h3 class="font-serif font-bold text-2xl text-primaryBlue">MAPEAMENTO DIAGNÓSTICO & AVALIAÇÃO DE RISCOS</h3>
+            <span class="text-[10px] font-mono text-primaryBlue font-bold uppercase tracking-widest bg-panel px-3 py-1 rounded-full">Eixo Principal &bull; Pessoa Jurídica</span>
+            <h3 class="font-serif font-bold text-2xl text-primaryBlue">PREVENÇÃO, TRANSFORMAÇÃO E POTENCIALIZAÇÃO, E PÓS-VENÇÃO</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
-                <li>Inventário Psicossocial PGR / NR-1</li>
-                <li>Mapeamento Clínico-Epidemiológico</li>
-                <li>Pesquisa Científica de Clima Organizacional</li>
+                <li>Avaliações aprofundadas em saúde mental (setores, lideranças, dinâmica organizacional)</li>
+                <li>Atendimento psicológico para colaboradores e canal externo de urgência psicológica</li>
+                <li>Intervenções com grupos, áreas, lideranças ou empresa inteira</li>
+                <li>Suporte técnico-clínico ao RH/BPs e pós-venção em crises e rupturas</li>
               </ul>
               <div class="p-5 bg-panel rounded-2xl border border-architectural">
-                <p class="text-xs text-inkMuted font-light leading-relaxed"><strong>Objetivo:</strong> Fornecer o retrato exato (com validade técnica e jurídica) das vulnerabilidades em saúde mental, prevenindo atuações e respaldando auditorias ESG e de Conselhos.</p>
+                <p class="text-xs text-inkMuted font-light leading-relaxed"><strong>Escopo:</strong> Responde tanto a demandas reveladas pela NR-1 quanto a necessidades internas próprias da empresa, gerando ganho de criatividade, soluções, cuidado e rendimento a curto, médio e longo prazo.</p>
               </div>
             </div>
           </div>
 
-          <!-- CONTEÚDO 2 -->
           <div id="pillar-content-2" class="pillar-pane hidden space-y-6">
-            <span class="text-[10px] font-mono text-primaryBlue font-bold uppercase tracking-widest bg-panel px-3 py-1 rounded-full">Frente: Governança Corporativa</span>
-            <h3 class="font-serif font-bold text-2xl text-primaryBlue">ARQUITETURA DE SOLUÇÕES E MITIGAÇÃO DE DANOS</h3>
+            <span class="text-[10px] font-mono text-warmAccent font-bold uppercase tracking-widest bg-panel px-3 py-1 rounded-full">Eixo Principal &bull; Pessoa Física</span>
+            <h3 class="font-serif font-bold text-2xl text-primaryBlue">GESTÃO DE CARREIRA E ALTA PERFORMANCE</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
-                <li>Treinamentos Exclusivos para Mitigação de Burnout</li>
-                <li>Certificação Lei 14.831/24 (Selo Empresa Promotora da Saúde Mental)</li>
-                <li>Formação de Lideranças em Segurança Psicológica</li>
+                <li>Gestão de carreira, transição e ascensão executiva</li>
+                <li>Mapeamento global do estado atual e redução estratégica de gaps</li>
+                <li>Gestão emocional focal para remoção de entraves e alta performance</li>
               </ul>
               <div class="p-5 bg-panel rounded-2xl border border-architectural">
-                <p class="text-xs text-inkMuted font-light leading-relaxed"><strong>Objetivo:</strong> Intervir nos problemas mapeados através de capacitações e ajustes de processos, garantindo a certificação da empresa e reduzindo atritos trabalhistas.</p>
+                <p class="text-xs text-inkMuted font-light leading-relaxed"><strong>Escopo:</strong> Atendimento exclusivo para profissionais de alta responsabilidade, alta complexidade ou alto potencial, líderes, executivos e CEOs.</p>
               </div>
             </div>
           </div>
 
-          <!-- CONTEÚDO 3 -->
           <div id="pillar-content-3" class="pillar-pane hidden space-y-6">
-            <span class="text-[10px] font-mono text-warmAccent font-bold uppercase tracking-widest bg-panel px-3 py-1 rounded-full">Frente: Inteligência Clínica Estratégica</span>
-            <h3 class="font-serif font-bold text-2xl text-primaryBlue">GESTÃO EMOCIONAL PARA ALTA PERFORMANCE</h3>
+            <span class="text-[10px] font-mono text-primaryBlue font-bold uppercase tracking-widest bg-panel px-3 py-1 rounded-full">Serviços de Pano de Fundo</span>
+            <h3 class="font-serif font-bold text-2xl text-primaryBlue">AVALIAÇÃO NR-1 APROFUNDADA &amp; CONSULTORIA COMPLEMENTAR</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
-                <li>Diagnóstico Psicanalítico e Clínico-Social individualizado</li>
-                <li>Otimização da Gestão Emocional para Diretores, Executivos e Sócios</li>
-                <li>Planejamento Estratégico de Transição e de Carreira</li>
+                <li>Avaliação NR-1 criteriosa e aprofundada (fora da lógica automática de 48 horas)</li>
+                <li>Conexão direta entre diagnóstico de riscos psicossociais e planos reais de intervenção</li>
+                <li>Consultoria complementar sob demanda para desdobramentos institucionais específicos</li>
               </ul>
               <div class="p-5 bg-panel rounded-2xl border border-architectural">
-                <p class="text-xs text-inkMuted font-light leading-relaxed"><strong>Objetivo:</strong> Eliminar barreiras psicológicas (autossabotagem, ansiedade) que impedem profissionais de elite de atingirem o máximo da performance sob pressão extrema.</p>
+                <p class="text-xs text-inkMuted font-light leading-relaxed"><strong>Escopo:</strong> Mantida em pano de fundo como diferencial técnico para organizações que valorizam diagnóstico rigoroso na base antes das intervenções.</p>
               </div>
             </div>
           </div>
-
-          <!-- CONTEÚDO 4 -->
-          <div id="pillar-content-4" class="pillar-pane hidden space-y-6">
-            <span class="text-[10px] font-mono text-warmAccent font-bold uppercase tracking-widest bg-panel px-3 py-1 rounded-full">Frente: Inteligência Clínica Estratégica</span>
-            <h3 class="font-serif font-bold text-2xl text-primaryBlue">SUPORTE TÉCNICO-CLÍNICO PARA LIDERANÇAS DE RH</h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
-                <li>Supervisão Clínica e Institucional Continuada para BPs</li>
-                <li>Mediação Neutra de Conflitos Complexos</li>
-                <li>Suporte Consultivo em Tomadas de Decisão Limites</li>
-              </ul>
-              <div class="p-5 bg-panel rounded-2xl border border-architectural">
-                <p class="text-xs text-inkMuted font-light leading-relaxed"><strong>Objetivo:</strong> Oferecer retaguarda clínica, externa e isenta para sustentar a atuação de Gestores de Pessoas e Diretores de RH perante situações de alta complexidade interna.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- CONTEÚDO 5 -->
-          <div id="pillar-content-5" class="pillar-pane hidden space-y-6">
-            <span class="text-[10px] font-mono text-warmAccent font-bold uppercase tracking-widest bg-panel px-3 py-1 rounded-full">Frente: Inteligência Clínica Estratégica</span>
-            <h3 class="font-serif font-bold text-2xl text-primaryBlue">INTERVENÇÃO EMERGENCIAL E CONTENÇÃO DE CRISES</h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <ul class="space-y-2 text-xs text-inkMuted font-light list-disc list-inside">
-                <li>Dispositivo de Acolhimento Focal (In Loco / Online)</li>
-                <li>Pósvenção Corporativa após Fatalidades e Traumas</li>
-                <li>Apuração Independente de Assédio (Lei 14.457/22)</li>
-              </ul>
-              <div class="p-5 bg-panel rounded-2xl border border-architectural">
-                <p class="text-xs text-inkMuted font-light leading-relaxed"><strong>Objetivo:</strong> Intervenção cirúrgica imediata para gerir o luto, apurar denúncias com rigor técnico e evitar que traumas paralisem a operação da empresa.</p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- 9. SIMULADOR INTERATIVO DE MATURIDADE NR-1 -->
-  <!-- ========================================== -->
-  <section id="simulador" class="py-20 sm:py-28 border-b border-architectural bg-panel">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      
+  <!-- 7. PANO DE FUNDO: NR-1 DIFERENCIADA -->
+  <section id="nr1-base" class="py-20 sm:py-28 border-b border-architectural bg-panel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
       <div class="max-w-3xl space-y-4">
         <span class="text-xs font-mono uppercase tracking-[0.28em] text-primaryBlue font-bold">
-          Ferramenta de Diagnóstico
+          Serviço de Pano de Fundo
         </span>
-        <h2 class="font-serif font-normal text-3xl sm:text-5xl text-primaryBlue">
-          Simulador de Risco NR-1 & Governança
+        <h2 class="font-serif font-normal text-3xl sm:text-4xl text-primaryBlue">
+          Avaliação NR-1 com Profundidade e Rigor Clínico
         </h2>
         <p class="text-sm text-inkMuted font-light leading-relaxed">
-          Selecione o perfil da sua empresa nos parâmetros abaixo para obter uma estimativa prévia do nível de exposição a passivos trabalhistas.
+          A NR-1 não é o carro-chefe da Sartore Consultoria — nosso foco principal está nas soluções de transformação, potencialização e gestão emocional. Quando realizamos a avaliação NR-1 em pano de fundo, ela segue o mesmo padrão elevado: sem formulários automatizados em 48 horas, mas com leitura criteriosa da realidade organizacional para embasar intervenções que geram valor real.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        <div class="lg:col-span-7 bg-canvas p-8 sm:p-10 rounded-3xl border border-architectural space-y-6">
-          <div class="space-y-2">
-            <label class="text-xs font-mono font-bold uppercase tracking-wider text-primaryBlue block">Porte da Organização</label>
-            <select id="sim-porte" onchange="calculateRiskScore()" class="w-full p-3.5 rounded-xl bg-cardBg border border-architectural text-xs font-medium focus:outline-none focus:border-primaryBlue">
-              <option value="10">Até 200 colaboradores</option>
-              <option value="20" selected>200 a 1.000 colaboradores</option>
-              <option value="30">Mais de 1.000 colaboradores</option>
-            </select>
-          </div>
-          <div class="space-y-2">
-            <label class="text-xs font-mono font-bold uppercase tracking-wider text-primaryBlue block">Estágio do Inventário NR-1</label>
-            <select id="sim-status" onchange="calculateRiskScore()" class="w-full p-3.5 rounded-xl bg-cardBg border border-architectural text-xs font-medium focus:outline-none focus:border-primaryBlue">
-              <option value="40">Não iniciado ou incompleto</option>
-              <option value="25" selected>Pesquisa de clima sem matriz epidemiológica</option>
-              <option value="5">Estrutura completa e auditada</option>
-            </select>
-          </div>
-          <div class="space-y-2">
-            <label class="text-xs font-mono font-bold uppercase tracking-wider text-primaryBlue block">Recorrência de Afastamentos / Burnout</label>
-            <select id="sim-casos" onchange="calculateRiskScore()" class="w-full p-3.5 rounded-xl bg-cardBg border border-architectural text-xs font-medium focus:outline-none focus:border-primaryBlue">
-              <option value="10">Baixa (casos isolados)</option>
-              <option value="20" selected>Moderada</option>
-              <option value="30">Elevada (múltiplas licenças)</option>
-            </select>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-cardBg p-6 rounded-2xl border border-architectural shadow-sm space-y-2">
+          <h4 class="font-serif font-bold text-lg text-primaryBlue">Diagnóstico Sem Superficialidade</h4>
+          <p class="text-xs text-inkMuted font-light leading-relaxed">Análise qualificada dos fatores psicossociais para empresas que buscam consistência técnica além da formalidade documental.</p>
         </div>
-
-        <div class="lg:col-span-5 bg-obsidian text-canvas p-8 sm:p-10 rounded-3xl border border-slate-800 space-y-6 flex flex-col justify-between h-full">
-          <div class="space-y-4">
-            <span class="text-xs font-mono uppercase tracking-[0.22em] text-white font-bold block">Resultado Preliminar</span>
-            <div class="flex items-center space-x-6 border-b border-slate-800 pb-6">
-              <div class="text-5xl font-serif font-bold text-white" id="score-display">65%</div>
-              <div>
-                <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 block">Nível de Risco:</span>
-                <span id="risk-level-badge" class="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">Elevado</span>
-              </div>
-            </div>
-            <div class="space-y-3 pt-2">
-              <h4 class="font-serif font-semibold text-lg text-white" id="result-title">Exposição Jurídica Potencial</h4>
-              <p class="text-xs text-slate-400 font-light leading-relaxed" id="result-desc">
-                Sua organização possui fragilidades no mapeamento do PGR/NR-1. Recomendamos estruturação técnica imediata.
-              </p>
-            </div>
-          </div>
+        <div class="bg-cardBg p-6 rounded-2xl border border-architectural shadow-sm space-y-2">
+          <h4 class="font-serif font-bold text-lg text-primaryBlue">Leitura de Dinâmica Institucional</h4>
+          <p class="text-xs text-inkMuted font-light leading-relaxed">Compreensão das tensões e padrões de funcionamento que afetam equipes, lideranças e sustentabilidade do trabalho.</p>
+        </div>
+        <div class="bg-cardBg p-6 rounded-2xl border border-architectural shadow-sm space-y-2">
+          <h4 class="font-serif font-bold text-lg text-primaryBlue">Ponte para Soluções Efetivas</h4>
+          <p class="text-xs text-inkMuted font-light leading-relaxed">Base sólida para estruturar programas de prevenção, transformação e potencialização alinhados aos objetivos da organização.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- 10. LIDERANÇA TÉCNICA (DR. ALAN BRAGA)     -->
-  <!-- ========================================== -->
+  <!-- 8. LIDERANÇA TÉCNICA -->
   <section id="lideranca" class="py-20 sm:py-28 border-b border-architectural bg-canvas">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -601,14 +435,14 @@
 
         <div class="lg:col-span-7 space-y-6">
           <span class="text-xs font-mono uppercase tracking-[0.28em] text-warmAccent font-bold">
-            Corpo Técnico & Responsabilidade
+            Corpo Técnico &amp; Responsabilidade
           </span>
           <div class="space-y-1">
             <h2 class="font-serif font-normal text-3xl sm:text-4xl md:text-5xl text-primaryBlue">
               Alan Braga de Paula
             </h2>
             <p class="text-xs font-mono uppercase tracking-[0.26em] text-ink font-bold pt-1">
-              DIRETOR TÉCNICO & FUNDADOR
+              DIRETOR TÉCNICO &amp; FUNDADOR
             </p>
           </div>
 
@@ -624,20 +458,17 @@
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- 11. FOOTER                                 -->
-  <!-- ========================================== -->
+  <!-- 9. FOOTER -->
   <footer id="contato" class="bg-obsidian text-canvas py-16 border-t border-slate-800 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 text-xs font-light text-slate-400">
         <div class="md:col-span-5 space-y-4">
-          <!-- LOGO OFICIAL NO RODAPÉ (Com tratamento para fundo escuro) -->
           <div class="flex items-center">
-            <img src="logo.png" alt="SC SARTORE" class="h-20 w-auto object-contain bg-slate-900/80 p-2.5 rounded-xl border border-slate-700/50" onerror="this.onerror=null; this.src='1000547639.jpg';">
+            <img src="logo.png" alt="Sartore Consultoria" class="h-20 w-auto object-contain bg-slate-900/80 p-2.5 rounded-xl border border-slate-700/50" onerror="this.onerror=null; this.src='1000561662.jpg';">
           </div>
           <p class="text-xs leading-relaxed max-w-sm">
-            Saúde Mental & Governança Corporativa. Consultoria sênior em conformidade ocupacional e inteligência clínica.
+            Sartore Consultoria — Saúde Mental, Carreira &amp; Alta Performance. Atuação especializada para organizações (PJ) e profissionais de alta responsabilidade (PF).
           </p>
         </div>
 
@@ -663,7 +494,7 @@
 
   <script>
     function switchPillarTab(pillarNum) {
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= 3; i++) {
         const pane = document.getElementById(`pillar-content-${i}`);
         const btn = document.getElementById(`tab-btn-${i}`);
         if (pane && btn) {
@@ -677,28 +508,6 @@
             btn.classList.remove('text-primaryBlue', 'border-b-2', 'border-primaryBlue');
           }
         }
-      }
-    }
-
-    function calculateRiskScore() {
-      const porte = parseInt(document.getElementById('sim-porte').value) || 20;
-      const status = parseInt(document.getElementById('sim-status').value) || 25;
-      const casos = parseInt(document.getElementById('sim-casos').value) || 20;
-      const totalScore = Math.min(100, porte + status + casos + 15);
-      const scoreDisplay = document.getElementById('score-display');
-      const badge = document.getElementById('risk-level-badge');
-      
-      scoreDisplay.innerText = `${totalScore}%`;
-
-      if (totalScore >= 75) {
-        badge.className = "inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/30";
-        badge.innerText = "Crítico";
-      } else if (totalScore >= 50) {
-        badge.className = "inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30";
-        badge.innerText = "Elevado";
-      } else {
-        badge.className = "inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
-        badge.innerText = "Moderado";
       }
     }
 
