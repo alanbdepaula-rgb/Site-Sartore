@@ -63,22 +63,22 @@
 <body class="bg-editorial-grid text-ink flex flex-col min-h-screen">
 
   <!-- 1. HEADER INSTITUCIONAL -->
-  <header class="sticky top-0 z-40 bg-[#FDFDFC]/95 backdrop-blur-md border-b border-architectural transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-44 sm:h-52 relative flex items-center justify-center">
+  <header class="sticky top-0 z-40 bg-obsidian/95 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-52 sm:h-60 relative flex items-center justify-center">
 
       <!-- LOGO OFICIAL CENTRALIZADA E AMPLIADA -->
       <a href="#" class="flex items-center justify-center group py-2">
         <img
           src="logo.png"
           alt="Sartore Consultoria - Saúde Mental, Carreira e Alta Performance"
-          class="h-36 sm:h-44 md:h-48 w-auto max-w-[330px] sm:max-w-[440px] object-contain transition-transform duration-300 group-hover:scale-105"
+          class="h-44 sm:h-52 md:h-56 w-auto max-w-[360px] sm:max-w-[520px] object-contain transition-transform duration-300 group-hover:scale-105"
           onerror="this.onerror=null; this.src='1000561662.jpg';"
         >
       </a>
 
       <!-- BOTÃO MENU MOBILE POSICIONADO À DIREITA SEM DESLOCAR A LOGO -->
       <div class="lg:hidden absolute right-4 sm:right-6 top-1/2 -translate-y-1/2">
-        <button onclick="toggleMobileNav()" class="p-2.5 text-ink bg-cardBg rounded-xl border border-architectural shadow-sm" aria-label="Abrir menu">
+        <button onclick="toggleMobileNav()" class="p-2.5 text-white bg-slate-900 rounded-xl border border-slate-700 shadow-sm" aria-label="Abrir menu">
           <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -87,21 +87,21 @@
     </div>
 
     <!-- NAVEGAÇÃO DESKTOP CENTRALIZADA -->
-    <nav class="hidden lg:flex items-center justify-center space-x-8 pb-4 text-xs font-semibold uppercase tracking-[0.2em] text-inkMuted border-t border-architectural/60 pt-3">
-      <a href="#filosofia" class="hover:text-primaryBlue transition-colors duration-200">Filosofia</a>
-      <a href="#corporativo" class="hover:text-primaryBlue transition-colors duration-200">Organizações (PJ)</a>
+    <nav class="hidden lg:flex items-center justify-center space-x-8 pb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300 border-t border-slate-800/80 pt-3">
+      <a href="#filosofia" class="hover:text-white transition-colors duration-200">Filosofia</a>
+      <a href="#corporativo" class="hover:text-white transition-colors duration-200">Organizações (PJ)</a>
       <a href="#profissionais" class="hover:text-warmAccent transition-colors duration-200">Profissionais (PF)</a>
-      <a href="#portfolio" class="hover:text-primaryBlue transition-colors duration-200">Portfólio</a>
-      <a href="#nr1-base" class="hover:text-primaryBlue transition-colors duration-200">NR-1</a>
+      <a href="#portfolio" class="hover:text-white transition-colors duration-200">Portfólio</a>
+      <a href="#nr1-base" class="hover:text-white transition-colors duration-200">NR-1</a>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-nav" class="hidden lg:hidden bg-panel border-b border-architectural px-6 py-6 space-y-4 text-center">
-      <a href="#filosofia" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Filosofia</a>
-      <a href="#corporativo" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Organizações (PJ)</a>
+    <div id="mobile-nav" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-6 space-y-4 text-center">
+      <a href="#filosofia" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-slate-200 hover:text-white">Filosofia</a>
+      <a href="#corporativo" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-slate-200 hover:text-white">Organizações (PJ)</a>
       <a href="#profissionais" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-warmAccent">Profissionais (PF)</a>
-      <a href="#portfolio" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">Portfólio Completo</a>
-      <a href="#nr1-base" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-primaryBlue">NR-1 Aprofundada</a>
+      <a href="#portfolio" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-slate-200 hover:text-white">Portfólio Completo</a>
+      <a href="#nr1-base" onclick="toggleMobileNav()" class="block text-xs uppercase tracking-widest font-semibold text-slate-200 hover:text-white">NR-1 Aprofundada</a>
     </div>
   </header>
 
